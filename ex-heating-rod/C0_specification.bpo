@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.poFile org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poIdentifier name="D" org.eventb.core.type="ℙ(D)"/>
+<org.eventb.core.poIdentifier name="Pa" org.eventb.core.type="ℙ(D×BOOL)"/>
+<org.eventb.core.poIdentifier name="d_prophecy" org.eventb.core.type="ℙ(R×D)"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poSequent name="prop_d_prophecy/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Axiom" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/ex-heating-rod/C0_specification.bpo|org.eventb.core.poFile#C0_specification|org.eventb.core.poPredicateSet#HYP'"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="d_prophecy∈(Rpos ⦂ ℙ(R)) → D⇒(∀t⦂R·t∈(Rpos ⦂ ℙ(R))⇒t∈dom(d_prophecy)∧d_prophecy∈(R ⦂ ℙ(R)) ⇸ D∧d_prophecy(t)∈dom(Pa)∧Pa∈D ⇸ BOOL)" org.eventb.core.source="/ex-heating-rod/C0_specification.buc|org.eventb.core.contextFile#C0_specification|org.eventb.core.axiom#_rqtJIOL0EeqVTtyyfNXolQ"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/ex-heating-rod/C0_specification.buc|org.eventb.core.contextFile#C0_specification|org.eventb.core.axiom#_rqtJIOL0EeqVTtyyfNXolQ"/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/ex-heating-rod/C0_specification.bpo|org.eventb.core.poFile#C0_specification|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poSelHintSnd="/ex-heating-rod/C0_specification.bpo|org.eventb.core.poFile#C0_specification|org.eventb.core.poPredicateSet#HYP'"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="HYP'" org.eventb.core.parentSet="/ex-heating-rod/C0_specification.bpo|org.eventb.core.poFile#C0_specification|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="Pa∈D → BOOL" org.eventb.core.source="/ex-heating-rod/C0_specification.buc|org.eventb.core.contextFile#C0_specification|org.eventb.core.axiom#_rqsiE-L0EeqVTtyyfNXolQ"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/ex-heating-rod/C0_specification.bpo|org.eventb.core.poFile#C0_specification|org.eventb.core.poPredicateSet#HYP'" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="d_prophecy∈(Rpos ⦂ ℙ(R)) → D∧(∀t⦂R·t∈(Rpos ⦂ ℙ(R))⇒Pa(d_prophecy(t))=TRUE)" org.eventb.core.source="/ex-heating-rod/C0_specification.buc|org.eventb.core.contextFile#C0_specification|org.eventb.core.axiom#_rqtJIOL0EeqVTtyyfNXolQ"/>
+</org.eventb.core.poPredicateSet>
+</org.eventb.core.poFile>

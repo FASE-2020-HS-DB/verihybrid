@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.poFile org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="CTXHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poIdentifier name="D" org.eventb.core.type="ℙ(D)"/>
+<org.eventb.core.poIdentifier name="Sa" org.eventb.core.type="ℙ(D×BOOL)"/>
+<org.eventb.core.poIdentifier name="d_prophecy" org.eventb.core.type="ℙ(R×D)"/>
+<org.eventb.core.poPredicate name="d_prophecz" org.eventb.core.predicate="Sa∈D → BOOL" org.eventb.core.source="/ex-car-stop/C0_specification.buc|org.eventb.core.contextFile#C0_specification|org.eventb.core.axiom#_rqsiE-L0EeqVTtyyfNXolQ"/>
+<org.eventb.core.poPredicate name="d_prophec{" org.eventb.core.predicate="d_prophecy∈(Rpos ⦂ ℙ(R)) → D∧(∀t⦂R·t∈(Rpos ⦂ ℙ(R))⇒Sa(d_prophecy(t))=TRUE)" org.eventb.core.source="/ex-car-stop/C0_specification.buc|org.eventb.core.contextFile#C0_specification|org.eventb.core.axiom#_rqtJIOL0EeqVTtyyfNXolQ"/>
+<org.eventb.core.poIdentifier name="S" org.eventb.core.type="R"/>
+<org.eventb.core.poIdentifier name="f0" org.eventb.core.type="ℙ(R×R)"/>
+<org.eventb.core.poPredicate name="d_prophec|" org.eventb.core.predicate="S∈(R ⦂ ℙ(R))" org.eventb.core.source="/ex-car-stop/C1_safety.buc|org.eventb.core.contextFile#C1_safety|org.eventb.core.axiom#_yKrV4OL3EeqUwtjuxyhNVg"/>
+<org.eventb.core.poPredicate name="d_prophec}" org.eventb.core.predicate="f0=(λt⦂R·t∈(Rpos ⦂ ℙ(R)) ∣ zero ⦂ R)" org.eventb.core.source="/ex-car-stop/C1_safety.buc|org.eventb.core.contextFile#C1_safety|org.eventb.core.axiom#_yKrV4OL3EeqUwtjuxyhNVi"/>
+<org.eventb.core.poPredicate name="d_prophec~" org.eventb.core.predicate="lt(zero ⦂ R,S)" org.eventb.core.source="/ex-car-stop/C1_safety.buc|org.eventb.core.contextFile#C1_safety|org.eventb.core.axiom#_yKrV4OL3EeqUwtjuxyhNVl"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.parentSet="/ex-car-stop/M1_safety.bpo|org.eventb.core.poFile#M1_safety|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poIdentifier name="Pa" org.eventb.core.type="ℙ(R×R)"/>
+<org.eventb.core.poIdentifier name="Va" org.eventb.core.type="ℙ(R×R)"/>
+<org.eventb.core.poIdentifier name="d" org.eventb.core.type="ℙ(R×D)"/>
+<org.eventb.core.poPredicate name="Vb" org.eventb.core.predicate="d∈(Rpos ⦂ ℙ(R)) → D" org.eventb.core.source="/ex-car-stop/M0_specification.bum|org.eventb.core.machineFile#M0_specification|org.eventb.core.invariant#_aIZeEOL2EeqkvOQFd0OwrA"/>
+<org.eventb.core.poPredicate name="Vc" org.eventb.core.predicate="∀t⦂R·t∈(Rpos ⦂ ℙ(R))⇒Sa(d(t))=TRUE" org.eventb.core.source="/ex-car-stop/M0_specification.bum|org.eventb.core.machineFile#M0_specification|org.eventb.core.invariant#_aIaFIOL2EeqkvOQFd0OwrA"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poSequent name="safety_Pa/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Invariant" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/ex-car-stop/M1_safety.bpo|org.eventb.core.poFile#M1_safety|org.eventb.core.poPredicateSet#HYPC0_specificatior"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀t⦂R·t∈(Rpos ⦂ ℙ(R))⇒t∈dom(Pa)∧Pa∈(R ⦂ ℙ(R)) ⇸ (R ⦂ ℙ(R))" org.eventb.core.source="/ex-car-stop/M1_safety.bum|org.eventb.core.machineFile#M1_safety|org.eventb.core.invariant#_yODesu3nEeqedoaCd3T8eA"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/ex-car-stop/M1_safety.bum|org.eventb.core.machineFile#M1_safety|org.eventb.core.invariant#_yODesu3nEeqedoaCd3T8eA"/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/ex-car-stop/M1_safety.bpo|org.eventb.core.poFile#M1_safety|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poSelHintSnd="/ex-car-stop/M1_safety.bpo|org.eventb.core.poFile#M1_safety|org.eventb.core.poPredicateSet#HYPC0_specificatior"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="INITIALISATION/d'/WWD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of witness" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/ex-car-stop/M1_safety.bpo|org.eventb.core.poFile#M1_safety|org.eventb.core.poPredicateSet#EVTALLHYPC0_specificatiot">
+<org.eventb.core.poPredicate name="'" org.eventb.core.predicate="Pa'∈(Rpos ⦂ ℙ(R)) → (R ⦂ ℙ(R))∧(∀t⦂R·t∈(Rpos ⦂ ℙ(R))⇒Pa'(t)∈closed(zero ⦂ R,S))" org.eventb.core.source="/ex-car-stop/M1_safety.bum|org.eventb.core.machineFile#M1_safety|org.eventb.core.event#'|org.eventb.core.action#_NVIKcOL3EeqkvOQFd0OwrA"/>
+<org.eventb.core.poPredicate name="(" org.eventb.core.predicate="Va'∈(Rpos ⦂ ℙ(R)) → (R ⦂ ℙ(R))∧(∀t⦂R·t∈(Rpos ⦂ ℙ(R))⇒lt(zero ⦂ R,Va'(t)))" org.eventb.core.source="/ex-car-stop/M1_safety.bum|org.eventb.core.machineFile#M1_safety|org.eventb.core.event#'|org.eventb.core.action#_yOC3oO3nEeqedoaCd3T8eA"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(Pa'∈(Rpos ⦂ ℙ(R)) → (R ⦂ ℙ(R))⇒(∀t⦂R·t∈(Rpos ⦂ ℙ(R))⇒t∈dom(Pa')∧Pa'∈(R ⦂ ℙ(R)) ⇸ (R ⦂ ℙ(R)))∧((∀t⦂R·t∈(Rpos ⦂ ℙ(R))⇒Pa'(t)∈closed(zero ⦂ R,S))∧Va'∈(Rpos ⦂ ℙ(R)) → (R ⦂ ℙ(R))⇒(∀t⦂R·t∈(Rpos ⦂ ℙ(R))⇒t∈dom(Va')∧Va'∈(R ⦂ ℙ(R)) ⇸ (R ⦂ ℙ(R)))))∧(Pa'∈(Rpos ⦂ ℙ(R)) → (R ⦂ ℙ(R))∧(∀t⦂R·t∈(Rpos ⦂ ℙ(R))⇒Pa'(t)∈closed(zero ⦂ R,S))∧Va'∈(Rpos ⦂ ℙ(R)) → (R ⦂ ℙ(R))∧(∀t⦂R·t∈(Rpos ⦂ ℙ(R))⇒lt(zero ⦂ R,Va'(t)))∧d'∈(Rpos ⦂ ℙ(R)) → D⇒(∀t⦂R·t∈(Rpos ⦂ ℙ(R))⇒t∈dom(d')∧d'∈(R ⦂ ℙ(R)) ⇸ D∧d'(t)∈dom(Sa)∧Sa∈D ⇸ BOOL))" org.eventb.core.source="/ex-car-stop/M1_safety.bum|org.eventb.core.machineFile#M1_safety|org.eventb.core.event#'|org.eventb.core.witness#_NVIKcOL3EeqkvOQFd0OwrB"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/ex-car-stop/M1_safety.bum|org.eventb.core.machineFile#M1_safety|org.eventb.core.event#'|org.eventb.core.witness#_NVIKcOL3EeqkvOQFd0OwrB"/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/ex-car-stop/M1_safety.bpo|org.eventb.core.poFile#M1_safety|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/ex-car-stop/M1_safety.bpo|org.eventb.core.poFile#M1_safety|org.eventb.core.poSequent#INITIALISATION\/d'\/WWD|org.eventb.core.poPredicateSet#SEQHYP"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="INITIALISATION/d'/WFIS" org.eventb.core.accurate="true" org.eventb.core.poDesc="Feasibility of witness" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/ex-car-stop/M1_safety.bpo|org.eventb.core.poFile#M1_safety|org.eventb.core.poPredicateSet#EVTALLHYPC0_specificatiot">
+<org.eventb.core.poPredicate name="'" org.eventb.core.predicate="Pa'∈(Rpos ⦂ ℙ(R)) → (R ⦂ ℙ(R))∧(∀t⦂R·t∈(Rpos ⦂ ℙ(R))⇒Pa'(t)∈closed(zero ⦂ R,S))" org.eventb.core.source="/ex-car-stop/M1_safety.bum|org.eventb.core.machineFile#M1_safety|org.eventb.core.event#'|org.eventb.core.action#_NVIKcOL3EeqkvOQFd0OwrA"/>
+<org.eventb.core.poPredicate name="(" org.eventb.core.predicate="Va'∈(Rpos ⦂ ℙ(R)) → (R ⦂ ℙ(R))∧(∀t⦂R·t∈(Rpos ⦂ ℙ(R))⇒lt(zero ⦂ R,Va'(t)))" org.eventb.core.source="/ex-car-stop/M1_safety.bum|org.eventb.core.machineFile#M1_safety|org.eventb.core.event#'|org.eventb.core.action#_yOC3oO3nEeqedoaCd3T8eA"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∃d'⦂ℙ(R×D)·Pa'∈(Rpos ⦂ ℙ(R)) → (R ⦂ ℙ(R))∧(∀t⦂R·t∈(Rpos ⦂ ℙ(R))⇒Pa'(t)∈closed(zero ⦂ R,S))∧Va'∈(Rpos ⦂ ℙ(R)) → (R ⦂ ℙ(R))∧(∀t⦂R·t∈(Rpos ⦂ ℙ(R))⇒lt(zero ⦂ R,Va'(t)))⇒d'∈(Rpos ⦂ ℙ(R)) → D∧(∀t⦂R·t∈(Rpos ⦂ ℙ(R))⇒Sa(d'(t))=TRUE)" org.eventb.core.source="/ex-car-stop/M1_safety.bum|org.eventb.core.machineFile#M1_safety|org.eventb.core.event#'|org.eventb.core.witness#_NVIKcOL3EeqkvOQFd0OwrB"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/ex-car-stop/M1_safety.bum|org.eventb.core.machineFile#M1_safety|org.eventb.core.event#'|org.eventb.core.witness#_NVIKcOL3EeqkvOQFd0OwrB"/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/ex-car-stop/M1_safety.bpo|org.eventb.core.poFile#M1_safety|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/ex-car-stop/M1_safety.bpo|org.eventb.core.poFile#M1_safety|org.eventb.core.poSequent#INITIALISATION\/d'\/WFIS|org.eventb.core.poPredicateSet#SEQHYP"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="INITIALISATION/type_Pa/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/ex-car-stop/M1_safety.bpo|org.eventb.core.poFile#M1_safety|org.eventb.core.poPredicateSet#EVTALLHYPC0_specificatiot">
+<org.eventb.core.poPredicate name="'" org.eventb.core.predicate="Pa'∈(Rpos ⦂ ℙ(R)) → (R ⦂ ℙ(R))∧(∀t⦂R·t∈(Rpos ⦂ ℙ(R))⇒Pa'(t)∈closed(zero ⦂ R,S))" org.eventb.core.source="/ex-car-stop/M1_safety.bum|org.eventb.core.machineFile#M1_safety|org.eventb.core.event#'|org.eventb.core.action#_NVIKcOL3EeqkvOQFd0OwrA"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="Pa'∈(Rpos ⦂ ℙ(R)) → (R ⦂ ℙ(R))" org.eventb.core.source="/ex-car-stop/M1_safety.bum|org.eventb.core.machineFile#M1_safety|org.eventb.core.invariant#_E0MIoO3CEeqedoaCd3T8eA"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/ex-car-stop/M0_specification.bum|org.eventb.core.machineFile#M0_specification|org.eventb.core.event#'"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/ex-car-stop/M1_safety.bum|org.eventb.core.machineFile#M1_safety|org.eventb.core.event#'"/>
+<org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/ex-car-stop/M1_safety.bum|org.eventb.core.machineFile#M1_safety|org.eventb.core.invariant#_E0MIoO3CEeqedoaCd3T8eA"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/ex-car-stop/M1_safety.bpo|org.eventb.core.poFile#M1_safety|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/ex-car-stop/M1_safety.bpo|org.eventb.core.poFile#M1_safety|org.eventb.core.poSequent#INITIALISATION\/type_Pa\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/ex-car-stop/M1_safety.bpo|org.eventb.core.poFile#M1_safety|org.eventb.core.poPredicateSet#HYPC0_specificatior|org.eventb.core.poPredicate#PRD0"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="INITIALISATION/type_Va/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/ex-car-stop/M1_safety.bpo|org.eventb.core.poFile#M1_safety|org.eventb.core.poPredicateSet#EVTALLHYPC0_specificatiot">
+<org.eventb.core.poPredicate name="'" org.eventb.core.predicate="Va'∈(Rpos ⦂ ℙ(R)) → (R ⦂ ℙ(R))∧(∀t⦂R·t∈(Rpos ⦂ ℙ(R))⇒lt(zero ⦂ R,Va'(t)))" org.eventb.core.source="/ex-car-stop/M1_safety.bum|org.eventb.core.machineFile#M1_safety|org.eventb.core.event#'|org.eventb.core.action#_yOC3oO3nEeqedoaCd3T8eA"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="Va'∈(Rpos ⦂ ℙ(R)) → (R ⦂ ℙ(R))" org.eventb.core.source="/ex-car-stop/M1_safety.bum|org.eventb.core.machineFile#M1_safety|org.eventb.core.invariant#_yODese3nEeqedoaCd3T8eA"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/ex-car-stop/M0_specification.bum|org.eventb.core.machineFile#M0_specification|org.eventb.core.event#'"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/ex-car-stop/M1_safety.bum|org.eventb.core.machineFile#M1_safety|org.eventb.core.event#'"/>
+<org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/ex-car-stop/M1_safety.bum|org.eventb.core.machineFile#M1_safety|org.eventb.core.invariant#_yODese3nEeqedoaCd3T8eA"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/ex-car-stop/M1_safety.bpo|org.eventb.core.poFile#M1_safety|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/ex-car-stop/M1_safety.bpo|org.eventb.core.poFile#M1_safety|org.eventb.core.poSequent#INITIALISATION\/type_Va\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/ex-car-stop/M1_safety.bpo|org.eventb.core.poFile#M1_safety|org.eventb.core.poPredicateSet#HYPC0_specificatior|org.eventb.core.poPredicate#PRD1"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="INITIALISATION/safety_Pa/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/ex-car-stop/M1_safety.bpo|org.eventb.core.poFile#M1_safety|org.eventb.core.poPredicateSet#EVTALLHYPC0_specificatiot">
+<org.eventb.core.poPredicate name="'" org.eventb.core.predicate="Pa'∈(Rpos ⦂ ℙ(R)) → (R ⦂ ℙ(R))∧(∀t⦂R·t∈(Rpos ⦂ ℙ(R))⇒Pa'(t)∈closed(zero ⦂ R,S))" org.eventb.core.source="/ex-car-stop/M1_safety.bum|org.eventb.core.machineFile#M1_safety|org.eventb.core.event#'|org.eventb.core.action#_NVIKcOL3EeqkvOQFd0OwrA"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀t⦂R·t∈(Rpos ⦂ ℙ(R))⇒lt(Pa'(t),S)" org.eventb.core.source="/ex-car-stop/M1_safety.bum|org.eventb.core.machineFile#M1_safety|org.eventb.core.invariant#_yODesu3nEeqedoaCd3T8eA"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/ex-car-stop/M0_specification.bum|org.eventb.core.machineFile#M0_specification|org.eventb.core.event#'"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/ex-car-stop/M1_safety.bum|org.eventb.core.machineFile#M1_safety|org.eventb.core.event#'"/>
+<org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/ex-car-stop/M1_safety.bum|org.eventb.core.machineFile#M1_safety|org.eventb.core.invariant#_yODesu3nEeqedoaCd3T8eA"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/ex-car-stop/M1_safety.bpo|org.eventb.core.poFile#M1_safety|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/ex-car-stop/M1_safety.bpo|org.eventb.core.poFile#M1_safety|org.eventb.core.poSequent#INITIALISATION\/safety_Pa\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/ex-car-stop/M1_safety.bpo|org.eventb.core.poFile#M1_safety|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD2"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="INITIALISATION/act1/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of action" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/ex-car-stop/M1_safety.bpo|org.eventb.core.poFile#M1_safety|org.eventb.core.poPredicateSet#EVTALLHYPC0_specificatiot">
+<org.eventb.core.poPredicate name="'" org.eventb.core.predicate="d'∈(Rpos ⦂ ℙ(R)) → D∧(∀t⦂R·t∈(Rpos ⦂ ℙ(R))⇒Sa(d'(t))=TRUE)" org.eventb.core.source="/ex-car-stop/M0_specification.bum|org.eventb.core.machineFile#M0_specification|org.eventb.core.event#'|org.eventb.core.action#_Ws1WIOL2EeqkvOQFd0OwrA"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀Pa'⦂ℙ(R×R)·Pa'∈(Rpos ⦂ ℙ(R)) → (R ⦂ ℙ(R))⇒(∀t⦂R·t∈(Rpos ⦂ ℙ(R))⇒t∈dom(Pa')∧Pa'∈(R ⦂ ℙ(R)) ⇸ (R ⦂ ℙ(R)))" org.eventb.core.source="/ex-car-stop/M1_safety.bum|org.eventb.core.machineFile#M1_safety|org.eventb.core.event#'|org.eventb.core.action#_NVIKcOL3EeqkvOQFd0OwrA"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/ex-car-stop/M1_safety.bum|org.eventb.core.machineFile#M1_safety|org.eventb.core.event#'|org.eventb.core.action#_NVIKcOL3EeqkvOQFd0OwrA"/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/ex-car-stop/M1_safety.bpo|org.eventb.core.poFile#M1_safety|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/ex-car-stop/M1_safety.bpo|org.eventb.core.poFile#M1_safety|org.eventb.core.poPredicateSet#EVTALLHYPC0_specificatiot"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="INITIALISATION/act1/FIS" org.eventb.core.accurate="true" org.eventb.core.poDesc="Feasibility of action" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/ex-car-stop/M1_safety.bpo|org.eventb.core.poFile#M1_safety|org.eventb.core.poPredicateSet#EVTALLHYPC0_specificatiot">
+<org.eventb.core.poPredicate name="'" org.eventb.core.predicate="d'∈(Rpos ⦂ ℙ(R)) → D∧(∀t⦂R·t∈(Rpos ⦂ ℙ(R))⇒Sa(d'(t))=TRUE)" org.eventb.core.source="/ex-car-stop/M0_specification.bum|org.eventb.core.machineFile#M0_specification|org.eventb.core.event#'|org.eventb.core.action#_Ws1WIOL2EeqkvOQFd0OwrA"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∃Pa'⦂ℙ(R×R)·Pa'∈(Rpos ⦂ ℙ(R)) → (R ⦂ ℙ(R))∧(∀t⦂R·t∈(Rpos ⦂ ℙ(R))⇒Pa'(t)∈closed(zero ⦂ R,S))" org.eventb.core.source="/ex-car-stop/M1_safety.bum|org.eventb.core.machineFile#M1_safety|org.eventb.core.event#'|org.eventb.core.action#_NVIKcOL3EeqkvOQFd0OwrA"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/ex-car-stop/M1_safety.bum|org.eventb.core.machineFile#M1_safety|org.eventb.core.event#'|org.eventb.core.action#_NVIKcOL3EeqkvOQFd0OwrA"/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/ex-car-stop/M1_safety.bpo|org.eventb.core.poFile#M1_safety|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/ex-car-stop/M1_safety.bpo|org.eventb.core.poFile#M1_safety|org.eventb.core.poPredicateSet#EVTALLHYPC0_specificatiot"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="INITIALISATION/act2/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of action" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/ex-car-stop/M1_safety.bpo|org.eventb.core.poFile#M1_safety|org.eventb.core.poPredicateSet#EVTALLHYPC0_specificatiot">
+<org.eventb.core.poPredicate name="'" org.eventb.core.predicate="d'∈(Rpos ⦂ ℙ(R)) → D∧(∀t⦂R·t∈(Rpos ⦂ ℙ(R))⇒Sa(d'(t))=TRUE)" org.eventb.core.source="/ex-car-stop/M0_specification.bum|org.eventb.core.machineFile#M0_specification|org.eventb.core.event#'|org.eventb.core.action#_Ws1WIOL2EeqkvOQFd0OwrA"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀Va'⦂ℙ(R×R)·Va'∈(Rpos ⦂ ℙ(R)) → (R ⦂ ℙ(R))⇒(∀t⦂R·t∈(Rpos ⦂ ℙ(R))⇒t∈dom(Va')∧Va'∈(R ⦂ ℙ(R)) ⇸ (R ⦂ ℙ(R)))" org.eventb.core.source="/ex-car-stop/M1_safety.bum|org.eventb.core.machineFile#M1_safety|org.eventb.core.event#'|org.eventb.core.action#_yOC3oO3nEeqedoaCd3T8eA"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/ex-car-stop/M1_safety.bum|org.eventb.core.machineFile#M1_safety|org.eventb.core.event#'|org.eventb.core.action#_yOC3oO3nEeqedoaCd3T8eA"/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/ex-car-stop/M1_safety.bpo|org.eventb.core.poFile#M1_safety|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/ex-car-stop/M1_safety.bpo|org.eventb.core.poFile#M1_safety|org.eventb.core.poPredicateSet#EVTALLHYPC0_specificatiot"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="INITIALISATION/act2/FIS" org.eventb.core.accurate="true" org.eventb.core.poDesc="Feasibility of action" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/ex-car-stop/M1_safety.bpo|org.eventb.core.poFile#M1_safety|org.eventb.core.poPredicateSet#EVTALLHYPC0_specificatiot">
+<org.eventb.core.poPredicate name="'" org.eventb.core.predicate="d'∈(Rpos ⦂ ℙ(R)) → D∧(∀t⦂R·t∈(Rpos ⦂ ℙ(R))⇒Sa(d'(t))=TRUE)" org.eventb.core.source="/ex-car-stop/M0_specification.bum|org.eventb.core.machineFile#M0_specification|org.eventb.core.event#'|org.eventb.core.action#_Ws1WIOL2EeqkvOQFd0OwrA"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∃Va'⦂ℙ(R×R)·Va'∈(Rpos ⦂ ℙ(R)) → (R ⦂ ℙ(R))∧(∀t⦂R·t∈(Rpos ⦂ ℙ(R))⇒lt(zero ⦂ R,Va'(t)))" org.eventb.core.source="/ex-car-stop/M1_safety.bum|org.eventb.core.machineFile#M1_safety|org.eventb.core.event#'|org.eventb.core.action#_yOC3oO3nEeqedoaCd3T8eA"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/ex-car-stop/M1_safety.bum|org.eventb.core.machineFile#M1_safety|org.eventb.core.event#'|org.eventb.core.action#_yOC3oO3nEeqedoaCd3T8eA"/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/ex-car-stop/M1_safety.bpo|org.eventb.core.poFile#M1_safety|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/ex-car-stop/M1_safety.bpo|org.eventb.core.poFile#M1_safety|org.eventb.core.poPredicateSet#EVTALLHYPC0_specificatiot"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="INITIALISATION/act1/SIM" org.eventb.core.accurate="true" org.eventb.core.poDesc="Action simulation" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/ex-car-stop/M1_safety.bpo|org.eventb.core.poFile#M1_safety|org.eventb.core.poPredicateSet#EVTALLHYPC0_specificatiot">
+<org.eventb.core.poPredicate name="'" org.eventb.core.predicate="Pa'∈(Rpos ⦂ ℙ(R)) → (R ⦂ ℙ(R))∧(∀t⦂R·t∈(Rpos ⦂ ℙ(R))⇒Pa'(t)∈closed(zero ⦂ R,S))∧Va'∈(Rpos ⦂ ℙ(R)) → (R ⦂ ℙ(R))∧(∀t⦂R·t∈(Rpos ⦂ ℙ(R))⇒lt(zero ⦂ R,Va'(t)))⇒d'∈(Rpos ⦂ ℙ(R)) → D∧(∀t⦂R·t∈(Rpos ⦂ ℙ(R))⇒Sa(d'(t))=TRUE)" org.eventb.core.source="/ex-car-stop/M1_safety.bum|org.eventb.core.machineFile#M1_safety|org.eventb.core.event#'|org.eventb.core.witness#_NVIKcOL3EeqkvOQFd0OwrB"/>
+<org.eventb.core.poPredicate name="(" org.eventb.core.predicate="Pa'∈(Rpos ⦂ ℙ(R)) → (R ⦂ ℙ(R))∧(∀t⦂R·t∈(Rpos ⦂ ℙ(R))⇒Pa'(t)∈closed(zero ⦂ R,S))" org.eventb.core.source="/ex-car-stop/M1_safety.bum|org.eventb.core.machineFile#M1_safety|org.eventb.core.event#'|org.eventb.core.action#_NVIKcOL3EeqkvOQFd0OwrA"/>
+<org.eventb.core.poPredicate name=")" org.eventb.core.predicate="Va'∈(Rpos ⦂ ℙ(R)) → (R ⦂ ℙ(R))∧(∀t⦂R·t∈(Rpos ⦂ ℙ(R))⇒lt(zero ⦂ R,Va'(t)))" org.eventb.core.source="/ex-car-stop/M1_safety.bum|org.eventb.core.machineFile#M1_safety|org.eventb.core.event#'|org.eventb.core.action#_yOC3oO3nEeqedoaCd3T8eA"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="d'∈(Rpos ⦂ ℙ(R)) → D∧(∀t⦂R·t∈(Rpos ⦂ ℙ(R))⇒Sa(d'(t))=TRUE)" org.eventb.core.source="/ex-car-stop/M0_specification.bum|org.eventb.core.machineFile#M0_specification|org.eventb.core.event#'|org.eventb.core.action#_Ws1WIOL2EeqkvOQFd0OwrA"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/ex-car-stop/M0_specification.bum|org.eventb.core.machineFile#M0_specification|org.eventb.core.event#'"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/ex-car-stop/M0_specification.bum|org.eventb.core.machineFile#M0_specification|org.eventb.core.event#'|org.eventb.core.action#_Ws1WIOL2EeqkvOQFd0OwrA"/>
+<org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/ex-car-stop/M1_safety.bum|org.eventb.core.machineFile#M1_safety|org.eventb.core.event#'"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/ex-car-stop/M1_safety.bpo|org.eventb.core.poFile#M1_safety|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/ex-car-stop/M1_safety.bpo|org.eventb.core.poFile#M1_safety|org.eventb.core.poSequent#INITIALISATION\/act1\/SIM|org.eventb.core.poPredicateSet#SEQHYP"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTC0_specificatiot" org.eventb.core.parentSet="/ex-car-stop/M1_safety.bpo|org.eventb.core.poFile#M1_safety|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poIdentifier name="Pa'" org.eventb.core.type="ℙ(R×R)"/>
+<org.eventb.core.poIdentifier name="Va'" org.eventb.core.type="ℙ(R×R)"/>
+<org.eventb.core.poIdentifier name="d'" org.eventb.core.type="ℙ(R×D)"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPC0_specificatiot" org.eventb.core.parentSet="/ex-car-stop/M1_safety.bpo|org.eventb.core.poFile#M1_safety|org.eventb.core.poPredicateSet#EVTIDENTC0_specificatiot" org.eventb.core.poStamp="0"/>
+<org.eventb.core.poSequent name="Update/grd1/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/ex-car-stop/M1_safety.bpo|org.eventb.core.poFile#M1_safety|org.eventb.core.poPredicateSet#EVTIDENTC0_specificatiou"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="f∈(Rpos ⦂ ℙ(R)) → (R ⦂ ℙ(R))⇒(∀t⦂R·t∈(Rpos ⦂ ℙ(R))⇒t∈dom(f)∧f∈(R ⦂ ℙ(R)) ⇸ (R ⦂ ℙ(R)))" org.eventb.core.source="/ex-car-stop/M1_safety.bum|org.eventb.core.machineFile#M1_safety|org.eventb.core.event#_NVIKdOL3EeqkvOQFd0OwrA|org.eventb.core.guard#_NVIxgeL3EeqkvOQFd0OwrA"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/ex-car-stop/M1_safety.bum|org.eventb.core.machineFile#M1_safety|org.eventb.core.event#_NVIKdOL3EeqkvOQFd0OwrA|org.eventb.core.guard#_NVIxgeL3EeqkvOQFd0OwrA"/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/ex-car-stop/M1_safety.bpo|org.eventb.core.poFile#M1_safety|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/ex-car-stop/M1_safety.bpo|org.eventb.core.poFile#M1_safety|org.eventb.core.poPredicateSet#EVTIDENTC0_specificatiou"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="Update/fa/WWD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of witness" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/ex-car-stop/M1_safety.bpo|org.eventb.core.poFile#M1_safety|org.eventb.core.poPredicateSet#EVTALLHYPC0_specificatiou"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(f∈(Rpos ⦂ ℙ(R)) → (R ⦂ ℙ(R))⇒(∀t⦂R·t∈(Rpos ⦂ ℙ(R))⇒t∈dom(f)∧f∈(R ⦂ ℙ(R)) ⇸ (R ⦂ ℙ(R)))∧((∀t⦂R·t∈(Rpos ⦂ ℙ(R))⇒f(t)∈closed(zero ⦂ R,S))∧g∈(Rpos ⦂ ℙ(R)) → (R ⦂ ℙ(R))⇒(∀t⦂R·t∈(Rpos ⦂ ℙ(R))⇒t∈dom(g)∧g∈(R ⦂ ℙ(R)) ⇸ (R ⦂ ℙ(R)))))∧(f∈(Rpos ⦂ ℙ(R)) → (R ⦂ ℙ(R))∧(∀t⦂R·t∈(Rpos ⦂ ℙ(R))⇒f(t)∈closed(zero ⦂ R,S))∧g∈(Rpos ⦂ ℙ(R)) → (R ⦂ ℙ(R))∧(∀t⦂R·t∈(Rpos ⦂ ℙ(R))⇒lt(zero ⦂ R,g(t)))∧fa∈(Rpos ⦂ ℙ(R)) → D⇒(∀t⦂R·t∈(Rpos ⦂ ℙ(R))⇒t∈dom(fa)∧fa∈(R ⦂ ℙ(R)) ⇸ D∧fa(t)∈dom(Sa)∧Sa∈D ⇸ BOOL))" org.eventb.core.source="/ex-car-stop/M1_safety.bum|org.eventb.core.machineFile#M1_safety|org.eventb.core.event#_NVIKdOL3EeqkvOQFd0OwrA|org.eventb.core.witness#_NVIxguL3EeqkvOQFd0OwrC"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/ex-car-stop/M1_safety.bum|org.eventb.core.machineFile#M1_safety|org.eventb.core.event#_NVIKdOL3EeqkvOQFd0OwrA|org.eventb.core.witness#_NVIxguL3EeqkvOQFd0OwrC"/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/ex-car-stop/M1_safety.bpo|org.eventb.core.poFile#M1_safety|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/ex-car-stop/M1_safety.bpo|org.eventb.core.poFile#M1_safety|org.eventb.core.poSequent#Update\/fa\/WWD|org.eventb.core.poPredicateSet#SEQHYP"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="Update/fa/WFIS" org.eventb.core.accurate="true" org.eventb.core.poDesc="Feasibility of witness" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/ex-car-stop/M1_safety.bpo|org.eventb.core.poFile#M1_safety|org.eventb.core.poPredicateSet#EVTALLHYPC0_specificatiou"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∃fa⦂ℙ(R×D)·f∈(Rpos ⦂ ℙ(R)) → (R ⦂ ℙ(R))∧(∀t⦂R·t∈(Rpos ⦂ ℙ(R))⇒f(t)∈closed(zero ⦂ R,S))∧g∈(Rpos ⦂ ℙ(R)) → (R ⦂ ℙ(R))∧(∀t⦂R·t∈(Rpos ⦂ ℙ(R))⇒lt(zero ⦂ R,g(t)))⇒fa∈(Rpos ⦂ ℙ(R)) → D∧(∀t⦂R·t∈(Rpos ⦂ ℙ(R))⇒Sa(fa(t))=TRUE)" org.eventb.core.source="/ex-car-stop/M1_safety.bum|org.eventb.core.machineFile#M1_safety|org.eventb.core.event#_NVIKdOL3EeqkvOQFd0OwrA|org.eventb.core.witness#_NVIxguL3EeqkvOQFd0OwrC"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/ex-car-stop/M1_safety.bum|org.eventb.core.machineFile#M1_safety|org.eventb.core.event#_NVIKdOL3EeqkvOQFd0OwrA|org.eventb.core.witness#_NVIxguL3EeqkvOQFd0OwrC"/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/ex-car-stop/M1_safety.bpo|org.eventb.core.poFile#M1_safety|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/ex-car-stop/M1_safety.bpo|org.eventb.core.poFile#M1_safety|org.eventb.core.poSequent#Update\/fa\/WFIS|org.eventb.core.poPredicateSet#SEQHYP"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="Update/type_Pa/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/ex-car-stop/M1_safety.bpo|org.eventb.core.poFile#M1_safety|org.eventb.core.poPredicateSet#EVTALLHYPC0_specificatiou"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="f∈(Rpos ⦂ ℙ(R)) → (R ⦂ ℙ(R))" org.eventb.core.source="/ex-car-stop/M1_safety.bum|org.eventb.core.machineFile#M1_safety|org.eventb.core.invariant#_E0MIoO3CEeqedoaCd3T8eA"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/ex-car-stop/M0_specification.bum|org.eventb.core.machineFile#M0_specification|org.eventb.core.event#_aIaFIOL2EeqkvOQFd0OwrB"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/ex-car-stop/M1_safety.bum|org.eventb.core.machineFile#M1_safety|org.eventb.core.event#_NVIKdOL3EeqkvOQFd0OwrA"/>
+<org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/ex-car-stop/M1_safety.bum|org.eventb.core.machineFile#M1_safety|org.eventb.core.invariant#_E0MIoO3CEeqedoaCd3T8eA"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/ex-car-stop/M1_safety.bpo|org.eventb.core.poFile#M1_safety|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/ex-car-stop/M1_safety.bpo|org.eventb.core.poFile#M1_safety|org.eventb.core.poSequent#Update\/type_Pa\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/ex-car-stop/M1_safety.bpo|org.eventb.core.poFile#M1_safety|org.eventb.core.poPredicateSet#HYPC0_specificatior|org.eventb.core.poPredicate#PRD0"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="Update/type_Va/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/ex-car-stop/M1_safety.bpo|org.eventb.core.poFile#M1_safety|org.eventb.core.poPredicateSet#EVTALLHYPC0_specificatiou"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="g∈(Rpos ⦂ ℙ(R)) → (R ⦂ ℙ(R))" org.eventb.core.source="/ex-car-stop/M1_safety.bum|org.eventb.core.machineFile#M1_safety|org.eventb.core.invariant#_yODese3nEeqedoaCd3T8eA"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/ex-car-stop/M0_specification.bum|org.eventb.core.machineFile#M0_specification|org.eventb.core.event#_aIaFIOL2EeqkvOQFd0OwrB"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/ex-car-stop/M1_safety.bum|org.eventb.core.machineFile#M1_safety|org.eventb.core.event#_NVIKdOL3EeqkvOQFd0OwrA"/>
+<org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/ex-car-stop/M1_safety.bum|org.eventb.core.machineFile#M1_safety|org.eventb.core.invariant#_yODese3nEeqedoaCd3T8eA"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/ex-car-stop/M1_safety.bpo|org.eventb.core.poFile#M1_safety|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/ex-car-stop/M1_safety.bpo|org.eventb.core.poFile#M1_safety|org.eventb.core.poSequent#Update\/type_Va\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/ex-car-stop/M1_safety.bpo|org.eventb.core.poFile#M1_safety|org.eventb.core.poPredicateSet#HYPC0_specificatior|org.eventb.core.poPredicate#PRD1"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="Update/safety_Pa/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/ex-car-stop/M1_safety.bpo|org.eventb.core.poFile#M1_safety|org.eventb.core.poPredicateSet#EVTALLHYPC0_specificatiou"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀t⦂R·t∈(Rpos ⦂ ℙ(R))⇒lt(f(t),S)" org.eventb.core.source="/ex-car-stop/M1_safety.bum|org.eventb.core.machineFile#M1_safety|org.eventb.core.invariant#_yODesu3nEeqedoaCd3T8eA"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/ex-car-stop/M0_specification.bum|org.eventb.core.machineFile#M0_specification|org.eventb.core.event#_aIaFIOL2EeqkvOQFd0OwrB"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/ex-car-stop/M1_safety.bum|org.eventb.core.machineFile#M1_safety|org.eventb.core.event#_NVIKdOL3EeqkvOQFd0OwrA"/>
+<org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/ex-car-stop/M1_safety.bum|org.eventb.core.machineFile#M1_safety|org.eventb.core.invariant#_yODesu3nEeqedoaCd3T8eA"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/ex-car-stop/M1_safety.bpo|org.eventb.core.poFile#M1_safety|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/ex-car-stop/M1_safety.bpo|org.eventb.core.poFile#M1_safety|org.eventb.core.poSequent#Update\/safety_Pa\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/ex-car-stop/M1_safety.bpo|org.eventb.core.poFile#M1_safety|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD2"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="Update/grd1/GRD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Guard strengthening (split)" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/ex-car-stop/M1_safety.bpo|org.eventb.core.poFile#M1_safety|org.eventb.core.poPredicateSet#EVTALLHYPC0_specificatiou">
+<org.eventb.core.poPredicate name="'" org.eventb.core.predicate="f∈(Rpos ⦂ ℙ(R)) → (R ⦂ ℙ(R))∧(∀t⦂R·t∈(Rpos ⦂ ℙ(R))⇒f(t)∈closed(zero ⦂ R,S))∧g∈(Rpos ⦂ ℙ(R)) → (R ⦂ ℙ(R))∧(∀t⦂R·t∈(Rpos ⦂ ℙ(R))⇒lt(zero ⦂ R,g(t)))⇒fa∈(Rpos ⦂ ℙ(R)) → D∧(∀t⦂R·t∈(Rpos ⦂ ℙ(R))⇒Sa(fa(t))=TRUE)" org.eventb.core.source="/ex-car-stop/M1_safety.bum|org.eventb.core.machineFile#M1_safety|org.eventb.core.event#_NVIKdOL3EeqkvOQFd0OwrA|org.eventb.core.witness#_NVIxguL3EeqkvOQFd0OwrC"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="fa∈(Rpos ⦂ ℙ(R)) → D∧(∀t⦂R·t∈(Rpos ⦂ ℙ(R))⇒Sa(fa(t))=TRUE)" org.eventb.core.source="/ex-car-stop/M0_specification.bum|org.eventb.core.machineFile#M0_specification|org.eventb.core.event#_aIaFIOL2EeqkvOQFd0OwrB|org.eventb.core.guard#("/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/ex-car-stop/M0_specification.bum|org.eventb.core.machineFile#M0_specification|org.eventb.core.event#_aIaFIOL2EeqkvOQFd0OwrB"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/ex-car-stop/M0_specification.bum|org.eventb.core.machineFile#M0_specification|org.eventb.core.event#_aIaFIOL2EeqkvOQFd0OwrB|org.eventb.core.guard#("/>
+<org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/ex-car-stop/M1_safety.bum|org.eventb.core.machineFile#M1_safety|org.eventb.core.event#_NVIKdOL3EeqkvOQFd0OwrA"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/ex-car-stop/M1_safety.bpo|org.eventb.core.poFile#M1_safety|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/ex-car-stop/M1_safety.bpo|org.eventb.core.poFile#M1_safety|org.eventb.core.poSequent#Update\/grd1\/GRD|org.eventb.core.poPredicateSet#SEQHYP"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTC0_specificatiou" org.eventb.core.parentSet="/ex-car-stop/M1_safety.bpo|org.eventb.core.poFile#M1_safety|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poIdentifier name="Pa'" org.eventb.core.type="ℙ(R×R)"/>
+<org.eventb.core.poIdentifier name="f" org.eventb.core.type="ℙ(R×R)"/>
+<org.eventb.core.poIdentifier name="g" org.eventb.core.type="ℙ(R×R)"/>
+<org.eventb.core.poIdentifier name="Va'" org.eventb.core.type="ℙ(R×R)"/>
+<org.eventb.core.poIdentifier name="fa" org.eventb.core.type="ℙ(R×D)"/>
+<org.eventb.core.poIdentifier name="d'" org.eventb.core.type="ℙ(R×D)"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPC0_specificatiou" org.eventb.core.parentSet="/ex-car-stop/M1_safety.bpo|org.eventb.core.poFile#M1_safety|org.eventb.core.poPredicateSet#EVTIDENTC0_specificatiou" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="f∈(Rpos ⦂ ℙ(R)) → (R ⦂ ℙ(R))∧(∀t⦂R·t∈(Rpos ⦂ ℙ(R))⇒lt(f(t),S))" org.eventb.core.source="/ex-car-stop/M1_safety.bum|org.eventb.core.machineFile#M1_safety|org.eventb.core.event#_NVIKdOL3EeqkvOQFd0OwrA|org.eventb.core.guard#_NVIxgeL3EeqkvOQFd0OwrA"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="g∈(Rpos ⦂ ℙ(R)) → (R ⦂ ℙ(R))" org.eventb.core.source="/ex-car-stop/M1_safety.bum|org.eventb.core.machineFile#M1_safety|org.eventb.core.event#_NVIKdOL3EeqkvOQFd0OwrA|org.eventb.core.guard#_NVIxguL3EeqkvOQFd0OwrE"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="HYPC0_specificatior" org.eventb.core.parentSet="/ex-car-stop/M1_safety.bpo|org.eventb.core.poFile#M1_safety|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="Pa∈(Rpos ⦂ ℙ(R)) → (R ⦂ ℙ(R))" org.eventb.core.source="/ex-car-stop/M1_safety.bum|org.eventb.core.machineFile#M1_safety|org.eventb.core.invariant#_E0MIoO3CEeqedoaCd3T8eA"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="Va∈(Rpos ⦂ ℙ(R)) → (R ⦂ ℙ(R))" org.eventb.core.source="/ex-car-stop/M1_safety.bum|org.eventb.core.machineFile#M1_safety|org.eventb.core.invariant#_yODese3nEeqedoaCd3T8eA"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/ex-car-stop/M1_safety.bpo|org.eventb.core.poFile#M1_safety|org.eventb.core.poPredicateSet#HYPC0_specificatior" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="∀t⦂R·t∈(Rpos ⦂ ℙ(R))⇒lt(Pa(t),S)" org.eventb.core.source="/ex-car-stop/M1_safety.bum|org.eventb.core.machineFile#M1_safety|org.eventb.core.invariant#_yODesu3nEeqedoaCd3T8eA"/>
+</org.eventb.core.poPredicateSet>
+</org.eventb.core.poFile>

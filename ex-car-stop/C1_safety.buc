@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.contextFile org.eventb.core.comment="&#10;   Notes: Initial Context " org.eventb.core.configuration="org.eventb.core.fwd" org.eventb.core.generated="false" org.eventb.texttools.text_lastmodified="1602756562597" org.eventb.texttools.text_representation="context C1_safety&#10;/*&#10;   Notes: Initial Context */&#10; extends C0_specification&#10;&#10;constants S // objective position&#10;          f0&#10;&#10;axioms&#10;  @type_S S ∈ R&#10;  @wit_f0 f0 = (λ t · t ∈ Rpos ∣ zero)&#10;  theorem @prop_S lt(zero, S) // Checked when instantiate&#10;end&#10;" version="3">
+<org.eventb.core.extendsContext name="_yKrV4OL3EeqUwtjuxyhNVh" org.eventb.core.target="C0_specification"/>
+<org.eventb.core.constant name="_yKqu0OL3EeqUwtjuxyhNVg" org.eventb.core.comment="objective position" org.eventb.core.generated="false" org.eventb.core.identifier="S"/>
+<org.eventb.core.axiom name="_yKrV4OL3EeqUwtjuxyhNVg" org.eventb.core.generated="false" org.eventb.core.label="type_S" org.eventb.core.predicate="S ∈ R"/>
+<org.eventb.core.axiom name="_yKrV4OL3EeqUwtjuxyhNVi" org.eventb.core.generated="false" org.eventb.core.label="wit_f0" org.eventb.core.predicate="f0 = (λ t · t ∈ Rpos ∣ zero)"/>
+<org.eventb.core.constant name="_yKrV4OL3EeqUwtjuxyhNVj" org.eventb.core.generated="false" org.eventb.core.identifier="f0"/>
+<org.eventb.core.axiom name="_yKrV4OL3EeqUwtjuxyhNVl" org.eventb.core.comment="Checked when instantiate" org.eventb.core.generated="false" org.eventb.core.label="prop_S" org.eventb.core.predicate="lt(zero, S)" org.eventb.core.theorem="true"/>
+</org.eventb.core.contextFile>

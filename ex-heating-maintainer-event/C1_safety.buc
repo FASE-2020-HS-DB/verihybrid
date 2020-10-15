@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.contextFile org.eventb.core.comment="&#10;   Notes: Initial Context " org.eventb.core.configuration="org.eventb.core.fwd" org.eventb.core.generated="false" org.eventb.texttools.text_lastmodified="1602756820065" org.eventb.texttools.text_representation="context C1_safety&#10;/*&#10;   Notes: Initial Context */&#10; extends C0_specification&#10;&#10;constants Tmax Tmin f0&#10;&#10;axioms&#10;  @type_Tmax Tmax ∈ R&#10;  @type_Tmin Tmin ∈ R&#10;  @prop_Tmin lt(Tmin, Tmax) // Tmin&lt;Tmax&#10;  @prop_f0 f0 = (λ t · t ∈ Rpos ∣ Tmin)&#10;  theorem @thm_Tmin leq(Tmin,Tmax)&#10;end&#10;" version="3">
+<org.eventb.core.extendsContext name="_yKrV4OL3EeqUwtjuxyhNVh" org.eventb.core.target="C0_specification"/>
+<org.eventb.core.constant name="_yKqHwOL3EeqUwtjuxyhNVg" org.eventb.core.generated="false" org.eventb.core.identifier="Tmax"/>
+<org.eventb.core.constant name="_yKqu0OL3EeqUwtjuxyhNVg" org.eventb.core.generated="false" org.eventb.core.identifier="Tmin"/>
+<org.eventb.core.constant name="_yKqu0eL3EeqUwtjuxyhNVg" org.eventb.core.generated="false" org.eventb.core.identifier="f0"/>
+<org.eventb.core.axiom name="_yKqu0uL3EeqUwtjuxyhNVg" org.eventb.core.generated="false" org.eventb.core.label="type_Tmax" org.eventb.core.predicate="Tmax ∈ R"/>
+<org.eventb.core.axiom name="_yKrV4OL3EeqUwtjuxyhNVg" org.eventb.core.generated="false" org.eventb.core.label="type_Tmin" org.eventb.core.predicate="Tmin ∈ R"/>
+<org.eventb.core.axiom name="_yKr88OL3EeqUwtjuxyhNVg" org.eventb.core.comment="Tmin&lt;Tmax" org.eventb.core.generated="false" org.eventb.core.label="prop_Tmin" org.eventb.core.predicate="lt(Tmin, Tmax)"/>
+<org.eventb.core.axiom name="_yKr88eL3EeqUwtjuxyhNVg" org.eventb.core.generated="false" org.eventb.core.label="prop_f0" org.eventb.core.predicate="f0 = (λ t · t ∈ Rpos ∣ Tmin)"/>
+<org.eventb.core.axiom name="_yKrV4OL3EeqUwtjuxyhNVi" org.eventb.core.generated="false" org.eventb.core.label="thm_Tmin" org.eventb.core.predicate="leq(Tmin,Tmax)" org.eventb.core.theorem="true"/>
+</org.eventb.core.contextFile>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.scContextFile org.eventb.core.accurate="true" org.eventb.core.configuration="org.eventb.core.fwd">
+<org.eventb.core.scExtendsContext name="'" org.eventb.core.scTarget="/ex-base/C1_safety.bcc|org.eventb.core.scContextFile#C1_safety" org.eventb.core.source="/ex-base/C2_cycle.buc|org.eventb.core.contextFile#C2_cycle|org.eventb.core.extendsContext#__xQkQOOPEeqGV8L4J4n50w"/>
+<org.eventb.core.scInternalContext name="C0_specification">
+<org.eventb.core.scAxiom name="'" org.eventb.core.label="type_P" org.eventb.core.predicate="Pa∈D → BOOL" org.eventb.core.source="/ex-base/C0_specification.buc|org.eventb.core.contextFile#C0_specification|org.eventb.core.axiom#_rqsiE-L0EeqVTtyyfNXolQ" org.eventb.core.theorem="false"/>
+<org.eventb.core.scAxiom name="(" org.eventb.core.label="prop_d_prophecy" org.eventb.core.predicate="d_prophecy∈(Rpos ⦂ ℙ(R)) → D∧(∀t⦂R·t∈(Rpos ⦂ ℙ(R))⇒Pa(d_prophecy(t))=TRUE)" org.eventb.core.source="/ex-base/C0_specification.buc|org.eventb.core.contextFile#C0_specification|org.eventb.core.axiom#_rqtJIOL0EeqVTtyyfNXolQ" org.eventb.core.theorem="false"/>
+<org.eventb.core.scCarrierSet name="D" org.eventb.core.source="/ex-base/C0_specification.buc|org.eventb.core.contextFile#C0_specification|org.eventb.core.carrierSet#_rqsiEOL0EeqVTtyyfNXolQ" org.eventb.core.type="ℙ(D)"/>
+<org.eventb.core.scConstant name="Pa" org.eventb.core.source="/ex-base/C0_specification.buc|org.eventb.core.contextFile#C0_specification|org.eventb.core.constant#_rqsiEeL0EeqVTtyyfNXolQ" org.eventb.core.type="ℙ(D×BOOL)"/>
+<org.eventb.core.scConstant name="d_prophecy" org.eventb.core.source="/ex-base/C0_specification.buc|org.eventb.core.contextFile#C0_specification|org.eventb.core.constant#_rqsiEuL0EeqVTtyyfNXolQ" org.eventb.core.type="ℙ(R×D)"/>
+</org.eventb.core.scInternalContext>
+<org.eventb.core.scInternalContext name="C1_safety">
+<org.eventb.core.scExtendsContext name="'" org.eventb.core.scTarget="/ex-base/C0_specification.bcc|org.eventb.core.scContextFile#C0_specification" org.eventb.core.source="/ex-base/C1_safety.buc|org.eventb.core.contextFile#C1_safety|org.eventb.core.extendsContext#_yKrV4OL3EeqUwtjuxyhNVh"/>
+<org.eventb.core.scAxiom name="C0_specificatioo" org.eventb.core.label="type_Tmax" org.eventb.core.predicate="Tmax∈(R ⦂ ℙ(R))" org.eventb.core.source="/ex-base/C1_safety.buc|org.eventb.core.contextFile#C1_safety|org.eventb.core.axiom#_yKqu0uL3EeqUwtjuxyhNVg" org.eventb.core.theorem="false"/>
+<org.eventb.core.scAxiom name="C0_specificatiop" org.eventb.core.label="type_Tmin" org.eventb.core.predicate="Tmin∈(R ⦂ ℙ(R))" org.eventb.core.source="/ex-base/C1_safety.buc|org.eventb.core.contextFile#C1_safety|org.eventb.core.axiom#_yKrV4OL3EeqUwtjuxyhNVg" org.eventb.core.theorem="false"/>
+<org.eventb.core.scAxiom name="C0_specificatioq" org.eventb.core.label="prop_Tmin" org.eventb.core.predicate="lt(Tmin,Tmax)" org.eventb.core.source="/ex-base/C1_safety.buc|org.eventb.core.contextFile#C1_safety|org.eventb.core.axiom#_yKr88OL3EeqUwtjuxyhNVg" org.eventb.core.theorem="false"/>
+<org.eventb.core.scAxiom name="C0_specificatior" org.eventb.core.label="prop_f0" org.eventb.core.predicate="f0=(λt⦂R·t∈(Rpos ⦂ ℙ(R)) ∣ Tmin)" org.eventb.core.source="/ex-base/C1_safety.buc|org.eventb.core.contextFile#C1_safety|org.eventb.core.axiom#_yKr88eL3EeqUwtjuxyhNVg" org.eventb.core.theorem="false"/>
+<org.eventb.core.scAxiom name="C0_specificatios" org.eventb.core.label="thm_Tmin" org.eventb.core.predicate="leq(Tmin,Tmax)" org.eventb.core.source="/ex-base/C1_safety.buc|org.eventb.core.contextFile#C1_safety|org.eventb.core.axiom#_yKrV4OL3EeqUwtjuxyhNVi" org.eventb.core.theorem="true"/>
+<org.eventb.core.scConstant name="Tmax" org.eventb.core.source="/ex-base/C1_safety.buc|org.eventb.core.contextFile#C1_safety|org.eventb.core.constant#_yKqHwOL3EeqUwtjuxyhNVg" org.eventb.core.type="R"/>
+<org.eventb.core.scConstant name="Tmin" org.eventb.core.source="/ex-base/C1_safety.buc|org.eventb.core.contextFile#C1_safety|org.eventb.core.constant#_yKqu0OL3EeqUwtjuxyhNVg" org.eventb.core.type="R"/>
+<org.eventb.core.scConstant name="f0" org.eventb.core.source="/ex-base/C1_safety.buc|org.eventb.core.contextFile#C1_safety|org.eventb.core.constant#_yKqu0eL3EeqUwtjuxyhNVg" org.eventb.core.type="ℙ(R×R)"/>
+</org.eventb.core.scInternalContext>
+</org.eventb.core.scContextFile>

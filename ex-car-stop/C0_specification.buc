@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.contextFile org.eventb.core.configuration="org.eventb.core.fwd" org.eventb.core.generated="false" org.eventb.texttools.text_lastmodified="1597935111849" org.eventb.texttools.text_representation="context C_specification&#10;&#10;sets D // abstract problem domain&#10;&#10;&#10;constants Pa // abstract safety function&#10;          xp_prophecy // prophecy function that satisfies abstract safety P initially&#10;&#10;&#10;axioms&#10;  @type_P Pa∈D→BOOL&#10;  @prophecy_x xp_prophecy∈Rplus → D ∧  (∀t·t∈Rplus⇒Pa(xp_prophecy(t))=TRUE)&#10;end&#10;" version="3">
+<org.eventb.core.carrierSet name="_rqsiEOL0EeqVTtyyfNXolQ" org.eventb.core.comment="abstract problem domain" org.eventb.core.generated="false" org.eventb.core.identifier="D"/>
+<org.eventb.core.constant name="_rqsiEeL0EeqVTtyyfNXolQ" org.eventb.core.comment="abstract safety function" org.eventb.core.generated="false" org.eventb.core.identifier="Sa"/>
+<org.eventb.core.constant name="_rqsiEuL0EeqVTtyyfNXolQ" org.eventb.core.comment="prophecy function that satisfies abstract safety P initially" org.eventb.core.generated="false" org.eventb.core.identifier="d_prophecy"/>
+<org.eventb.core.axiom name="_rqsiE-L0EeqVTtyyfNXolQ" org.eventb.core.generated="false" org.eventb.core.label="type_P" org.eventb.core.predicate="Sa∈D→BOOL"/>
+<org.eventb.core.axiom name="_rqtJIOL0EeqVTtyyfNXolQ" org.eventb.core.generated="false" org.eventb.core.label="prop_d_prophecy" org.eventb.core.predicate="d_prophecy∈Rpos → D ∧  (∀t·t∈Rpos⇒Sa(d_prophecy(t))=TRUE)"/>
+</org.eventb.core.contextFile>

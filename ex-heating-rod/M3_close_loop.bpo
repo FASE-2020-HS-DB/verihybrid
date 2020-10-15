@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.poFile org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="CTXHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poIdentifier name="D" org.eventb.core.type="ℙ(D)"/>
+<org.eventb.core.poIdentifier name="Pa" org.eventb.core.type="ℙ(D×BOOL)"/>
+<org.eventb.core.poIdentifier name="d_prophecy" org.eventb.core.type="ℙ(R×D)"/>
+<org.eventb.core.poPredicate name="d_prophecz" org.eventb.core.predicate="Pa∈D → BOOL" org.eventb.core.source="/ex-heating-rod/C0_specification.buc|org.eventb.core.contextFile#C0_specification|org.eventb.core.axiom#_rqsiE-L0EeqVTtyyfNXolQ"/>
+<org.eventb.core.poPredicate name="d_prophec{" org.eventb.core.predicate="d_prophecy∈(Rpos ⦂ ℙ(R)) → D∧(∀t⦂R·t∈(Rpos ⦂ ℙ(R))⇒Pa(d_prophecy(t))=TRUE)" org.eventb.core.source="/ex-heating-rod/C0_specification.buc|org.eventb.core.contextFile#C0_specification|org.eventb.core.axiom#_rqtJIOL0EeqVTtyyfNXolQ"/>
+<org.eventb.core.poIdentifier name="Tmax" org.eventb.core.type="R"/>
+<org.eventb.core.poIdentifier name="Tmin" org.eventb.core.type="R"/>
+<org.eventb.core.poIdentifier name="f0" org.eventb.core.type="ℙ(R×R)"/>
+<org.eventb.core.poPredicate name="d_prophec|" org.eventb.core.predicate="Tmax∈(R ⦂ ℙ(R))" org.eventb.core.source="/ex-heating-rod/C1_safety.buc|org.eventb.core.contextFile#C1_safety|org.eventb.core.axiom#_yKqu0uL3EeqUwtjuxyhNVg"/>
+<org.eventb.core.poPredicate name="d_prophec}" org.eventb.core.predicate="Tmin∈(R ⦂ ℙ(R))" org.eventb.core.source="/ex-heating-rod/C1_safety.buc|org.eventb.core.contextFile#C1_safety|org.eventb.core.axiom#_yKrV4OL3EeqUwtjuxyhNVg"/>
+<org.eventb.core.poPredicate name="d_prophec~" org.eventb.core.predicate="lt(Tmin,Tmax)" org.eventb.core.source="/ex-heating-rod/C1_safety.buc|org.eventb.core.contextFile#C1_safety|org.eventb.core.axiom#_yKr88OL3EeqUwtjuxyhNVg"/>
+<org.eventb.core.poPredicate name="d_prophed'" org.eventb.core.predicate="f0=(λt⦂R·t∈(Rpos ⦂ ℙ(R)) ∣ Tmin)" org.eventb.core.source="/ex-heating-rod/C1_safety.buc|org.eventb.core.contextFile#C1_safety|org.eventb.core.axiom#_yKr88eL3EeqUwtjuxyhNVg"/>
+<org.eventb.core.poPredicate name="d_prophed(" org.eventb.core.predicate="leq(Tmin,Tmax)" org.eventb.core.source="/ex-heating-rod/C1_safety.buc|org.eventb.core.contextFile#C1_safety|org.eventb.core.axiom#_yKrV4OL3EeqUwtjuxyhNVi"/>
+<org.eventb.core.poIdentifier name="sysSTATE" org.eventb.core.type="ℙ(sysSTATE)"/>
+<org.eventb.core.poIdentifier name="DECISION" org.eventb.core.type="sysSTATE"/>
+<org.eventb.core.poIdentifier name="RUN" org.eventb.core.type="sysSTATE"/>
+<org.eventb.core.poIdentifier name="deltaT" org.eventb.core.type="R"/>
+<org.eventb.core.poPredicate name="d_prophed)" org.eventb.core.predicate="partition(sysSTATE,{RUN},{DECISION})" org.eventb.core.source="/ex-heating-rod/C3_close_loop.buc|org.eventb.core.contextFile#C3_close_loop|org.eventb.core.axiom#_lZdgYeOrEeqGV8L4J4n50w"/>
+<org.eventb.core.poPredicate name="d_prophed*" org.eventb.core.predicate="deltaT∈(Rpos ⦂ ℙ(R))" org.eventb.core.source="/ex-heating-rod/C3_close_loop.buc|org.eventb.core.contextFile#C3_close_loop|org.eventb.core.axiom#_lZdgYuOrEeqGV8L4J4n50w"/>
+<org.eventb.core.poPredicate name="d_prophed+" org.eventb.core.predicate="lt(zero ⦂ R,deltaT)" org.eventb.core.source="/ex-heating-rod/C3_close_loop.buc|org.eventb.core.contextFile#C3_close_loop|org.eventb.core.axiom#_lZdgY-OrEeqGV8L4J4n50w"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.parentSet="/ex-heating-rod/M3_close_loop.bpo|org.eventb.core.poFile#M3_close_loop|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poIdentifier name="T" org.eventb.core.type="ℙ(R×R)"/>
+<org.eventb.core.poIdentifier name="Ta" org.eventb.core.type="ℙ(R×R)"/>
+<org.eventb.core.poIdentifier name="d" org.eventb.core.type="ℙ(R×D)"/>
+<org.eventb.core.poIdentifier name="fa" org.eventb.core.type="ℙ(R×R)"/>
+<org.eventb.core.poIdentifier name="now" org.eventb.core.type="R"/>
+<org.eventb.core.poIdentifier name="s" org.eventb.core.type="sysSTATE"/>
+<org.eventb.core.poIdentifier name="ta" org.eventb.core.type="R"/>
+<org.eventb.core.poPredicate name="nox" org.eventb.core.predicate="d∈(Rpos ⦂ ℙ(R)) → D" org.eventb.core.source="/ex-heating-rod/M0_specification.bum|org.eventb.core.machineFile#M0_specification|org.eventb.core.invariant#_aIZeEOL2EeqkvOQFd0OwrA"/>
+<org.eventb.core.poPredicate name="noy" org.eventb.core.predicate="∀t⦂R·t∈(Rpos ⦂ ℙ(R))⇒Pa(d(t))=TRUE" org.eventb.core.source="/ex-heating-rod/M0_specification.bum|org.eventb.core.machineFile#M0_specification|org.eventb.core.invariant#_aIaFIOL2EeqkvOQFd0OwrA"/>
+<org.eventb.core.poPredicate name="noz" org.eventb.core.predicate="Ta∈(Rpos ⦂ ℙ(R)) → (R ⦂ ℙ(R))" org.eventb.core.source="/ex-heating-rod/M1_safety.bum|org.eventb.core.machineFile#M1_safety|org.eventb.core.invariant#_NVIKcuL3EeqkvOQFd0OwrA"/>
+<org.eventb.core.poPredicate name="no{" org.eventb.core.predicate="∀t⦂R·t∈(Rpos ⦂ ℙ(R))⇒Ta(t)∈closed(Tmin,Tmax)" org.eventb.core.source="/ex-heating-rod/M1_safety.bum|org.eventb.core.machineFile#M1_safety|org.eventb.core.invariant#_NVIKc-L3EeqkvOQFd0OwrA"/>
+<org.eventb.core.poPredicate name="no|" org.eventb.core.predicate="T∈(Rpos ⦂ ℙ(R)) → (R ⦂ ℙ(R))" org.eventb.core.source="/ex-heating-rod/M2_cycle.bum|org.eventb.core.machineFile#M2_cycle|org.eventb.core.invariant#_c86WNON8EeqGV8L4J4n50w"/>
+<org.eventb.core.poPredicate name="no}" org.eventb.core.predicate="now∈(Rpos ⦂ ℙ(R))" org.eventb.core.source="/ex-heating-rod/M2_cycle.bum|org.eventb.core.machineFile#M2_cycle|org.eventb.core.invariant#_c86WNeN8EeqGV8L4J4n50w"/>
+<org.eventb.core.poPredicate name="no~" org.eventb.core.predicate="∀t⦂R·t∈(Rpos ⦂ ℙ(R))∧t∈closed(zero ⦂ R,now)⇒T(t)=Ta(t)" org.eventb.core.source="/ex-heating-rod/M2_cycle.bum|org.eventb.core.machineFile#M2_cycle|org.eventb.core.invariant#_c869QON8EeqGV8L4J4n50w"/>
+<org.eventb.core.poPredicate name="np'" org.eventb.core.predicate="∀t⦂R·t∈(Rpos ⦂ ℙ(R))∧t∈closed(zero ⦂ R,now)⇒T(t)∈closed(Tmin,Tmax)" org.eventb.core.source="/ex-heating-rod/M2_cycle.bum|org.eventb.core.machineFile#M2_cycle|org.eventb.core.invariant#_c869QeN8EeqGV8L4J4n50w"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poSequent name="safety/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Invariant" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/ex-heating-rod/M3_close_loop.bpo|org.eventb.core.poFile#M3_close_loop|org.eventb.core.poPredicateSet#HYPC0_specificatio{"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀t⦂R·t∈(Rpos ⦂ ℙ(R))∧t∈closed(zero ⦂ R,now)⇒t∈dom(T)∧T∈(R ⦂ ℙ(R)) ⇸ (R ⦂ ℙ(R))" org.eventb.core.source="/ex-heating-rod/M3_close_loop.bum|org.eventb.core.machineFile#M3_close_loop|org.eventb.core.invariant#_U22ZwADjEeufnOcimimBrA"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/ex-heating-rod/M3_close_loop.bum|org.eventb.core.machineFile#M3_close_loop|org.eventb.core.invariant#_U22ZwADjEeufnOcimimBrA"/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/ex-heating-rod/M3_close_loop.bpo|org.eventb.core.poFile#M3_close_loop|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poSelHintSnd="/ex-heating-rod/M3_close_loop.bpo|org.eventb.core.poFile#M3_close_loop|org.eventb.core.poPredicateSet#HYPC0_specificatio{"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="safe_fa/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Invariant" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/ex-heating-rod/M3_close_loop.bpo|org.eventb.core.poFile#M3_close_loop|org.eventb.core.poPredicateSet#HYPC0_specificatio\|"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="s=RUN⇒(∀t⦂R·t∈(Rpos ⦂ ℙ(R))∧t∈openclosed(now,now plus ta)⇒t∈dom(fa)∧fa∈(R ⦂ ℙ(R)) ⇸ (R ⦂ ℙ(R)))" org.eventb.core.source="/ex-heating-rod/M3_close_loop.bum|org.eventb.core.machineFile#M3_close_loop|org.eventb.core.invariant#_e4KWkeOrEeqGV8L4J4n50w"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/ex-heating-rod/M3_close_loop.bum|org.eventb.core.machineFile#M3_close_loop|org.eventb.core.invariant#_e4KWkeOrEeqGV8L4J4n50w"/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/ex-heating-rod/M3_close_loop.bpo|org.eventb.core.poFile#M3_close_loop|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poSelHintSnd="/ex-heating-rod/M3_close_loop.bpo|org.eventb.core.poFile#M3_close_loop|org.eventb.core.poPredicateSet#HYPC0_specificatio\|"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="INITIALISATION/type_T/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/ex-heating-rod/M3_close_loop.bpo|org.eventb.core.poFile#M3_close_loop|org.eventb.core.poPredicateSet#EVTALLHYPC0_specificatio~">
+<org.eventb.core.poPredicate name="'" org.eventb.core.predicate="T'∈(Rpos ⦂ ℙ(R)) → (R ⦂ ℙ(R))∧(∀t⦂R·t∈(Rpos ⦂ ℙ(R))∧t∈closed(zero ⦂ R,zero ⦂ R)⇒T'(t)=Tmin)" org.eventb.core.source="/ex-heating-rod/M2_cycle.bum|org.eventb.core.machineFile#M2_cycle|org.eventb.core.event#'|org.eventb.core.action#_c86WMON8EeqGV8L4J4n50w"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="T'∈(Rpos ⦂ ℙ(R)) → (R ⦂ ℙ(R))" org.eventb.core.source="/ex-heating-rod/M3_close_loop.bum|org.eventb.core.machineFile#M3_close_loop|org.eventb.core.invariant#_e4JvguOrEeqGV8L4J4n50w"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/ex-heating-rod/M2_cycle.bum|org.eventb.core.machineFile#M2_cycle|org.eventb.core.event#'"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/ex-heating-rod/M3_close_loop.bum|org.eventb.core.machineFile#M3_close_loop|org.eventb.core.event#'"/>
+<org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/ex-heating-rod/M3_close_loop.bum|org.eventb.core.machineFile#M3_close_loop|org.eventb.core.invariant#_e4JvguOrEeqGV8L4J4n50w"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/ex-heating-rod/M3_close_loop.bpo|org.eventb.core.poFile#M3_close_loop|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/ex-heating-rod/M3_close_loop.bpo|org.eventb.core.poFile#M3_close_loop|org.eventb.core.poSequent#INITIALISATION\/type_T\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/ex-heating-rod/M3_close_loop.bpo|org.eventb.core.poFile#M3_close_loop|org.eventb.core.poPredicateSet#HYPC0_specificatio{|org.eventb.core.poPredicate#PRD0"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="INITIALISATION/type_now/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/ex-heating-rod/M3_close_loop.bpo|org.eventb.core.poFile#M3_close_loop|org.eventb.core.poPredicateSet#EVTALLHYPC0_specificatio~"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(zero ⦂ R)∈(Rpos ⦂ ℙ(R))" org.eventb.core.source="/ex-heating-rod/M3_close_loop.bum|org.eventb.core.machineFile#M3_close_loop|org.eventb.core.invariant#_e4Jvg-OrEeqGV8L4J4n50w"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/ex-heating-rod/M2_cycle.bum|org.eventb.core.machineFile#M2_cycle|org.eventb.core.event#'"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/ex-heating-rod/M3_close_loop.bum|org.eventb.core.machineFile#M3_close_loop|org.eventb.core.event#'"/>
+<org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/ex-heating-rod/M3_close_loop.bum|org.eventb.core.machineFile#M3_close_loop|org.eventb.core.invariant#_e4Jvg-OrEeqGV8L4J4n50w"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/ex-heating-rod/M3_close_loop.bpo|org.eventb.core.poFile#M3_close_loop|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/ex-heating-rod/M3_close_loop.bpo|org.eventb.core.poFile#M3_close_loop|org.eventb.core.poSequent#INITIALISATION\/type_now\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/ex-heating-rod/M3_close_loop.bpo|org.eventb.core.poFile#M3_close_loop|org.eventb.core.poPredicateSet#HYPC0_specificatio{|org.eventb.core.poPredicate#PRD1"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="INITIALISATION/type_ta/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/ex-heating-rod/M3_close_loop.bpo|org.eventb.core.poFile#M3_close_loop|org.eventb.core.poPredicateSet#EVTALLHYPC0_specificatio~">
+<org.eventb.core.poPredicate name="'" org.eventb.core.predicate="ta'∈(Rpos ⦂ ℙ(R))" org.eventb.core.source="/ex-heating-rod/M3_close_loop.bum|org.eventb.core.machineFile#M3_close_loop|org.eventb.core.event#'|org.eventb.core.action#_SFHIYADXEeufnOcimimBrA"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="ta'∈(Rpos ⦂ ℙ(R))" org.eventb.core.source="/ex-heating-rod/M3_close_loop.bum|org.eventb.core.machineFile#M3_close_loop|org.eventb.core.invariant#_ShBTMADVEeufnOcimimBrA"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/ex-heating-rod/M2_cycle.bum|org.eventb.core.machineFile#M2_cycle|org.eventb.core.event#'"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/ex-heating-rod/M3_close_loop.bum|org.eventb.core.machineFile#M3_close_loop|org.eventb.core.event#'"/>
+<org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/ex-heating-rod/M3_close_loop.bum|org.eventb.core.machineFile#M3_close_loop|org.eventb.core.invariant#_ShBTMADVEeufnOcimimBrA"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/ex-heating-rod/M3_close_loop.bpo|org.eventb.core.poFile#M3_close_loop|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/ex-heating-rod/M3_close_loop.bpo|org.eventb.core.poFile#M3_close_loop|org.eventb.core.poSequent#INITIALISATION\/type_ta\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/ex-heating-rod/M3_close_loop.bpo|org.eventb.core.poFile#M3_close_loop|org.eventb.core.poPredicateSet#HYPC0_specificatio{|org.eventb.core.poPredicate#PRD3"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="INITIALISATION/type_fa/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/ex-heating-rod/M3_close_loop.bpo|org.eventb.core.poFile#M3_close_loop|org.eventb.core.poPredicateSet#EVTALLHYPC0_specificatio~">
+<org.eventb.core.poPredicate name="'" org.eventb.core.predicate="fa'∈(Rpos ⦂ ℙ(R)) → (R ⦂ ℙ(R))" org.eventb.core.source="/ex-heating-rod/M3_close_loop.bum|org.eventb.core.machineFile#M3_close_loop|org.eventb.core.event#'|org.eventb.core.action#_e4JIceOrEeqGV8L4J4n50w"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="fa'∈(Rpos ⦂ ℙ(R)) → (R ⦂ ℙ(R))" org.eventb.core.source="/ex-heating-rod/M3_close_loop.bum|org.eventb.core.machineFile#M3_close_loop|org.eventb.core.invariant#_e4KWkOOrEeqGV8L4J4n50w"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/ex-heating-rod/M2_cycle.bum|org.eventb.core.machineFile#M2_cycle|org.eventb.core.event#'"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/ex-heating-rod/M3_close_loop.bum|org.eventb.core.machineFile#M3_close_loop|org.eventb.core.event#'"/>
+<org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/ex-heating-rod/M3_close_loop.bum|org.eventb.core.machineFile#M3_close_loop|org.eventb.core.invariant#_e4KWkOOrEeqGV8L4J4n50w"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/ex-heating-rod/M3_close_loop.bpo|org.eventb.core.poFile#M3_close_loop|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/ex-heating-rod/M3_close_loop.bpo|org.eventb.core.poFile#M3_close_loop|org.eventb.core.poSequent#INITIALISATION\/type_fa\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/ex-heating-rod/M3_close_loop.bpo|org.eventb.core.poFile#M3_close_loop|org.eventb.core.poPredicateSet#HYPC0_specificatio{|org.eventb.core.poPredicate#PRD4"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="INITIALISATION/safety/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/ex-heating-rod/M3_close_loop.bpo|org.eventb.core.poFile#M3_close_loop|org.eventb.core.poPredicateSet#EVTALLHYPC0_specificatio~">
+<org.eventb.core.poPredicate name="'" org.eventb.core.predicate="T'∈(Rpos ⦂ ℙ(R)) → (R ⦂ ℙ(R))∧(∀t⦂R·t∈(Rpos ⦂ ℙ(R))∧t∈closed(zero ⦂ R,zero ⦂ R)⇒T'(t)=Tmin)" org.eventb.core.source="/ex-heating-rod/M2_cycle.bum|org.eventb.core.machineFile#M2_cycle|org.eventb.core.event#'|org.eventb.core.action#_c86WMON8EeqGV8L4J4n50w"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀t⦂R·t∈(Rpos ⦂ ℙ(R))∧t∈closed(zero ⦂ R,zero ⦂ R)⇒T'(t)∈closed(Tmin,Tmax)" org.eventb.core.source="/ex-heating-rod/M3_close_loop.bum|org.eventb.core.machineFile#M3_close_loop|org.eventb.core.invariant#_U22ZwADjEeufnOcimimBrA"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/ex-heating-rod/M2_cycle.bum|org.eventb.core.machineFile#M2_cycle|org.eventb.core.event#'"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/ex-heating-rod/M3_close_loop.bum|org.eventb.core.machineFile#M3_close_loop|org.eventb.core.event#'"/>
+<org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/ex-heating-rod/M3_close_loop.bum|org.eventb.core.machineFile#M3_close_loop|org.eventb.core.invariant#_U22ZwADjEeufnOcimimBrA"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/ex-heating-rod/M3_close_loop.bpo|org.eventb.core.poFile#M3_close_loop|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/ex-heating-rod/M3_close_loop.bpo|org.eventb.core.poFile#M3_close_loop|org.eventb.core.poSequent#INITIALISATION\/safety\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/ex-heating-rod/M3_close_loop.bpo|org.eventb.core.poFile#M3_close_loop|org.eventb.core.poPredicateSet#HYPC0_specificatio\||org.eventb.core.poPredicate#PRD5"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="INITIALISATION/safe_fa/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/ex-heating-rod/M3_close_loop.bpo|org.eventb.core.poFile#M3_close_loop|org.eventb.core.poPredicateSet#EVTALLHYPC0_specificatio~">
+<org.eventb.core.poPredicate name="'" org.eventb.core.predicate="ta'∈(Rpos ⦂ ℙ(R))" org.eventb.core.source="/ex-heating-rod/M3_close_loop.bum|org.eventb.core.machineFile#M3_close_loop|org.eventb.core.event#'|org.eventb.core.action#_SFHIYADXEeufnOcimimBrA"/>
+<org.eventb.core.poPredicate name="(" org.eventb.core.predicate="fa'∈(Rpos ⦂ ℙ(R)) → (R ⦂ ℙ(R))" org.eventb.core.source="/ex-heating-rod/M3_close_loop.bum|org.eventb.core.machineFile#M3_close_loop|org.eventb.core.event#'|org.eventb.core.action#_e4JIceOrEeqGV8L4J4n50w"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="DECISION=RUN⇒(∀t⦂R·t∈(Rpos ⦂ ℙ(R))∧t∈openclosed(zero ⦂ R,(zero ⦂ R) plus ta')⇒fa'(t)∈closed(Tmin,Tmax))" org.eventb.core.source="/ex-heating-rod/M3_close_loop.bum|org.eventb.core.machineFile#M3_close_loop|org.eventb.core.invariant#_e4KWkeOrEeqGV8L4J4n50w"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/ex-heating-rod/M2_cycle.bum|org.eventb.core.machineFile#M2_cycle|org.eventb.core.event#'"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/ex-heating-rod/M3_close_loop.bum|org.eventb.core.machineFile#M3_close_loop|org.eventb.core.event#'"/>
+<org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/ex-heating-rod/M3_close_loop.bum|org.eventb.core.machineFile#M3_close_loop|org.eventb.core.invariant#_e4KWkeOrEeqGV8L4J4n50w"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/ex-heating-rod/M3_close_loop.bpo|org.eventb.core.poFile#M3_close_loop|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/ex-heating-rod/M3_close_loop.bpo|org.eventb.core.poFile#M3_close_loop|org.eventb.core.poSequent#INITIALISATION\/safe_fa\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/ex-heating-rod/M3_close_loop.bpo|org.eventb.core.poFile#M3_close_loop|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD6"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="INITIALISATION/act4/FIS" org.eventb.core.accurate="true" org.eventb.core.poDesc="Feasibility of action" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/ex-heating-rod/M3_close_loop.bpo|org.eventb.core.poFile#M3_close_loop|org.eventb.core.poPredicateSet#EVTALLHYPC0_specificatio~">
+<org.eventb.core.poPredicate name="'" org.eventb.core.predicate="T'∈(Rpos ⦂ ℙ(R)) → (R ⦂ ℙ(R))∧(∀t⦂R·t∈(Rpos ⦂ ℙ(R))∧t∈closed(zero ⦂ R,zero ⦂ R)⇒T'(t)=Tmin)" org.eventb.core.source="/ex-heating-rod/M2_cycle.bum|org.eventb.core.machineFile#M2_cycle|org.eventb.core.event#'|org.eventb.core.action#_c86WMON8EeqGV8L4J4n50w"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(Rpos ⦂ ℙ(R))≠(∅ ⦂ ℙ(R))" org.eventb.core.source="/ex-heating-rod/M3_close_loop.bum|org.eventb.core.machineFile#M3_close_loop|org.eventb.core.event#'|org.eventb.core.action#_SFHIYADXEeufnOcimimBrA"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/ex-heating-rod/M3_close_loop.bum|org.eventb.core.machineFile#M3_close_loop|org.eventb.core.event#'|org.eventb.core.action#_SFHIYADXEeufnOcimimBrA"/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/ex-heating-rod/M3_close_loop.bpo|org.eventb.core.poFile#M3_close_loop|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/ex-heating-rod/M3_close_loop.bpo|org.eventb.core.poFile#M3_close_loop|org.eventb.core.poPredicateSet#EVTALLHYPC0_specificatio~"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="INITIALISATION/act5/FIS" org.eventb.core.accurate="true" org.eventb.core.poDesc="Feasibility of action" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/ex-heating-rod/M3_close_loop.bpo|org.eventb.core.poFile#M3_close_loop|org.eventb.core.poPredicateSet#EVTALLHYPC0_specificatio~">
+<org.eventb.core.poPredicate name="'" org.eventb.core.predicate="T'∈(Rpos ⦂ ℙ(R)) → (R ⦂ ℙ(R))∧(∀t⦂R·t∈(Rpos ⦂ ℙ(R))∧t∈closed(zero ⦂ R,zero ⦂ R)⇒T'(t)=Tmin)" org.eventb.core.source="/ex-heating-rod/M2_cycle.bum|org.eventb.core.machineFile#M2_cycle|org.eventb.core.event#'|org.eventb.core.action#_c86WMON8EeqGV8L4J4n50w"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(Rpos ⦂ ℙ(R)) → (R ⦂ ℙ(R))≠(∅ ⦂ ℙ(ℙ(R×R)))" org.eventb.core.source="/ex-heating-rod/M3_close_loop.bum|org.eventb.core.machineFile#M3_close_loop|org.eventb.core.event#'|org.eventb.core.action#_e4JIceOrEeqGV8L4J4n50w"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/ex-heating-rod/M3_close_loop.bum|org.eventb.core.machineFile#M3_close_loop|org.eventb.core.event#'|org.eventb.core.action#_e4JIceOrEeqGV8L4J4n50w"/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/ex-heating-rod/M3_close_loop.bpo|org.eventb.core.poFile#M3_close_loop|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/ex-heating-rod/M3_close_loop.bpo|org.eventb.core.poFile#M3_close_loop|org.eventb.core.poPredicateSet#EVTALLHYPC0_specificatio~"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTC0_specificatio~" org.eventb.core.parentSet="/ex-heating-rod/M3_close_loop.bpo|org.eventb.core.poFile#M3_close_loop|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poIdentifier name="T'" org.eventb.core.type="ℙ(R×R)"/>
+<org.eventb.core.poIdentifier name="now'" org.eventb.core.type="R"/>
+<org.eventb.core.poIdentifier name="s'" org.eventb.core.type="sysSTATE"/>
+<org.eventb.core.poIdentifier name="fa'" org.eventb.core.type="ℙ(R×R)"/>
+<org.eventb.core.poIdentifier name="ta'" org.eventb.core.type="R"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPC0_specificatio~" org.eventb.core.parentSet="/ex-heating-rod/M3_close_loop.bpo|org.eventb.core.poFile#M3_close_loop|org.eventb.core.poPredicateSet#EVTIDENTC0_specificatio~" org.eventb.core.poStamp="0"/>
+<org.eventb.core.poSequent name="Plant/type_T/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/ex-heating-rod/M3_close_loop.bpo|org.eventb.core.poFile#M3_close_loop|org.eventb.core.poPredicateSet#EVTALLHYPC0_specificatip'"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="T(lopen(now) ◁ fa)∈(Rpos ⦂ ℙ(R)) → (R ⦂ ℙ(R))" org.eventb.core.source="/ex-heating-rod/M3_close_loop.bum|org.eventb.core.machineFile#M3_close_loop|org.eventb.core.invariant#_e4JvguOrEeqGV8L4J4n50w"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/ex-heating-rod/M2_cycle.bum|org.eventb.core.machineFile#M2_cycle|org.eventb.core.event#_c869QuN8EeqGV8L4J4n50w"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/ex-heating-rod/M3_close_loop.bum|org.eventb.core.machineFile#M3_close_loop|org.eventb.core.event#_e4KWlOOrEeqGV8L4J4n50w"/>
+<org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/ex-heating-rod/M3_close_loop.bum|org.eventb.core.machineFile#M3_close_loop|org.eventb.core.invariant#_e4JvguOrEeqGV8L4J4n50w"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/ex-heating-rod/M3_close_loop.bpo|org.eventb.core.poFile#M3_close_loop|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/ex-heating-rod/M3_close_loop.bpo|org.eventb.core.poFile#M3_close_loop|org.eventb.core.poSequent#Plant\/type_T\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/ex-heating-rod/M3_close_loop.bpo|org.eventb.core.poFile#M3_close_loop|org.eventb.core.poPredicateSet#HYPC0_specificatio{|org.eventb.core.poPredicate#PRD0"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="Plant/type_now/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/ex-heating-rod/M3_close_loop.bpo|org.eventb.core.poFile#M3_close_loop|org.eventb.core.poPredicateSet#EVTALLHYPC0_specificatip'"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="now plus ta∈(Rpos ⦂ ℙ(R))" org.eventb.core.source="/ex-heating-rod/M3_close_loop.bum|org.eventb.core.machineFile#M3_close_loop|org.eventb.core.invariant#_e4Jvg-OrEeqGV8L4J4n50w"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/ex-heating-rod/M2_cycle.bum|org.eventb.core.machineFile#M2_cycle|org.eventb.core.event#_c869QuN8EeqGV8L4J4n50w"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/ex-heating-rod/M3_close_loop.bum|org.eventb.core.machineFile#M3_close_loop|org.eventb.core.event#_e4KWlOOrEeqGV8L4J4n50w"/>
+<org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/ex-heating-rod/M3_close_loop.bum|org.eventb.core.machineFile#M3_close_loop|org.eventb.core.invariant#_e4Jvg-OrEeqGV8L4J4n50w"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/ex-heating-rod/M3_close_loop.bpo|org.eventb.core.poFile#M3_close_loop|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/ex-heating-rod/M3_close_loop.bpo|org.eventb.core.poFile#M3_close_loop|org.eventb.core.poSequent#Plant\/type_now\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/ex-heating-rod/M3_close_loop.bpo|org.eventb.core.poFile#M3_close_loop|org.eventb.core.poPredicateSet#HYPC0_specificatio{|org.eventb.core.poPredicate#PRD1"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="Plant/safety/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/ex-heating-rod/M3_close_loop.bpo|org.eventb.core.poFile#M3_close_loop|org.eventb.core.poPredicateSet#EVTALLHYPC0_specificatip'"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀t⦂R·t∈(Rpos ⦂ ℙ(R))∧t∈closed(zero ⦂ R,now plus ta)⇒(T(lopen(now) ◁ fa))(t)∈closed(Tmin,Tmax)" org.eventb.core.source="/ex-heating-rod/M3_close_loop.bum|org.eventb.core.machineFile#M3_close_loop|org.eventb.core.invariant#_U22ZwADjEeufnOcimimBrA"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/ex-heating-rod/M2_cycle.bum|org.eventb.core.machineFile#M2_cycle|org.eventb.core.event#_c869QuN8EeqGV8L4J4n50w"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/ex-heating-rod/M3_close_loop.bum|org.eventb.core.machineFile#M3_close_loop|org.eventb.core.event#_e4KWlOOrEeqGV8L4J4n50w"/>
+<org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/ex-heating-rod/M3_close_loop.bum|org.eventb.core.machineFile#M3_close_loop|org.eventb.core.invariant#_U22ZwADjEeufnOcimimBrA"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/ex-heating-rod/M3_close_loop.bpo|org.eventb.core.poFile#M3_close_loop|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/ex-heating-rod/M3_close_loop.bpo|org.eventb.core.poFile#M3_close_loop|org.eventb.core.poSequent#Plant\/safety\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/ex-heating-rod/M3_close_loop.bpo|org.eventb.core.poFile#M3_close_loop|org.eventb.core.poPredicateSet#HYPC0_specificatio\||org.eventb.core.poPredicate#PRD5"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="Plant/safe_fa/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/ex-heating-rod/M3_close_loop.bpo|org.eventb.core.poFile#M3_close_loop|org.eventb.core.poPredicateSet#EVTALLHYPC0_specificatip'"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="DECISION=RUN⇒(∀t⦂R·t∈(Rpos ⦂ ℙ(R))∧t∈openclosed(now plus ta,(now plus ta) plus ta)⇒fa(t)∈closed(Tmin,Tmax))" org.eventb.core.source="/ex-heating-rod/M3_close_loop.bum|org.eventb.core.machineFile#M3_close_loop|org.eventb.core.invariant#_e4KWkeOrEeqGV8L4J4n50w"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/ex-heating-rod/M2_cycle.bum|org.eventb.core.machineFile#M2_cycle|org.eventb.core.event#_c869QuN8EeqGV8L4J4n50w"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/ex-heating-rod/M3_close_loop.bum|org.eventb.core.machineFile#M3_close_loop|org.eventb.core.event#_e4KWlOOrEeqGV8L4J4n50w"/>
+<org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/ex-heating-rod/M3_close_loop.bum|org.eventb.core.machineFile#M3_close_loop|org.eventb.core.invariant#_e4KWkeOrEeqGV8L4J4n50w"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/ex-heating-rod/M3_close_loop.bpo|org.eventb.core.poFile#M3_close_loop|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/ex-heating-rod/M3_close_loop.bpo|org.eventb.core.poFile#M3_close_loop|org.eventb.core.poSequent#Plant\/safe_fa\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/ex-heating-rod/M3_close_loop.bpo|org.eventb.core.poFile#M3_close_loop|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD6"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="Plant/grd2/GRD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Guard strengthening (split)" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/ex-heating-rod/M3_close_loop.bpo|org.eventb.core.poFile#M3_close_loop|org.eventb.core.poPredicateSet#EVTALLHYPC0_specificatip'"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="ta∈(Rpos ⦂ ℙ(R))" org.eventb.core.source="/ex-heating-rod/M2_cycle.bum|org.eventb.core.machineFile#M2_cycle|org.eventb.core.event#_c869QuN8EeqGV8L4J4n50w|org.eventb.core.guard#_c87kUeN8EeqGV8L4J4n50w"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/ex-heating-rod/M2_cycle.bum|org.eventb.core.machineFile#M2_cycle|org.eventb.core.event#_c869QuN8EeqGV8L4J4n50w"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/ex-heating-rod/M2_cycle.bum|org.eventb.core.machineFile#M2_cycle|org.eventb.core.event#_c869QuN8EeqGV8L4J4n50w|org.eventb.core.guard#_c87kUeN8EeqGV8L4J4n50w"/>
+<org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/ex-heating-rod/M3_close_loop.bum|org.eventb.core.machineFile#M3_close_loop|org.eventb.core.event#_e4KWlOOrEeqGV8L4J4n50w"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/ex-heating-rod/M3_close_loop.bpo|org.eventb.core.poFile#M3_close_loop|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/ex-heating-rod/M3_close_loop.bpo|org.eventb.core.poFile#M3_close_loop|org.eventb.core.poSequent#Plant\/grd2\/GRD|org.eventb.core.poPredicateSet#SEQHYP"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="Plant/grd3/GRD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Guard strengthening (split)" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/ex-heating-rod/M3_close_loop.bpo|org.eventb.core.poFile#M3_close_loop|org.eventb.core.poPredicateSet#EVTALLHYPC0_specificatip'"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="fa∈(Rpos ⦂ ℙ(R)) → (R ⦂ ℙ(R))" org.eventb.core.source="/ex-heating-rod/M2_cycle.bum|org.eventb.core.machineFile#M2_cycle|org.eventb.core.event#_c869QuN8EeqGV8L4J4n50w|org.eventb.core.guard#_c87kUuN8EeqGV8L4J4n50w"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/ex-heating-rod/M2_cycle.bum|org.eventb.core.machineFile#M2_cycle|org.eventb.core.event#_c869QuN8EeqGV8L4J4n50w"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/ex-heating-rod/M2_cycle.bum|org.eventb.core.machineFile#M2_cycle|org.eventb.core.event#_c869QuN8EeqGV8L4J4n50w|org.eventb.core.guard#_c87kUuN8EeqGV8L4J4n50w"/>
+<org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/ex-heating-rod/M3_close_loop.bum|org.eventb.core.machineFile#M3_close_loop|org.eventb.core.event#_e4KWlOOrEeqGV8L4J4n50w"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/ex-heating-rod/M3_close_loop.bpo|org.eventb.core.poFile#M3_close_loop|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/ex-heating-rod/M3_close_loop.bpo|org.eventb.core.poFile#M3_close_loop|org.eventb.core.poSequent#Plant\/grd3\/GRD|org.eventb.core.poPredicateSet#SEQHYP"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="Plant/grd5/GRD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Guard strengthening (split)" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/ex-heating-rod/M3_close_loop.bpo|org.eventb.core.poFile#M3_close_loop|org.eventb.core.poPredicateSet#EVTALLHYPC0_specificatip'"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀t⦂R·t∈(Rpos ⦂ ℙ(R))∧t∈openclosed(now,now plus ta)⇒fa(t)∈closed(Tmin,Tmax)" org.eventb.core.source="/ex-heating-rod/M2_cycle.bum|org.eventb.core.machineFile#M2_cycle|org.eventb.core.event#_c869QuN8EeqGV8L4J4n50w|org.eventb.core.guard#_c87kU-N8EeqGV8L4J4n50w"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/ex-heating-rod/M2_cycle.bum|org.eventb.core.machineFile#M2_cycle|org.eventb.core.event#_c869QuN8EeqGV8L4J4n50w"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/ex-heating-rod/M2_cycle.bum|org.eventb.core.machineFile#M2_cycle|org.eventb.core.event#_c869QuN8EeqGV8L4J4n50w|org.eventb.core.guard#_c87kU-N8EeqGV8L4J4n50w"/>
+<org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/ex-heating-rod/M3_close_loop.bum|org.eventb.core.machineFile#M3_close_loop|org.eventb.core.event#_e4KWlOOrEeqGV8L4J4n50w"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/ex-heating-rod/M3_close_loop.bpo|org.eventb.core.poFile#M3_close_loop|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/ex-heating-rod/M3_close_loop.bpo|org.eventb.core.poFile#M3_close_loop|org.eventb.core.poSequent#Plant\/grd5\/GRD|org.eventb.core.poPredicateSet#SEQHYP"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="Plant/act1/SIM" org.eventb.core.accurate="true" org.eventb.core.poDesc="Action simulation" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/ex-heating-rod/M3_close_loop.bpo|org.eventb.core.poFile#M3_close_loop|org.eventb.core.poPredicateSet#EVTALLHYPC0_specificatip'"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="now plus ta=now plus ta" org.eventb.core.source="/ex-heating-rod/M2_cycle.bum|org.eventb.core.machineFile#M2_cycle|org.eventb.core.event#_c869QuN8EeqGV8L4J4n50w|org.eventb.core.action#_c87kVeN8EeqGV8L4J4n50w"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/ex-heating-rod/M2_cycle.bum|org.eventb.core.machineFile#M2_cycle|org.eventb.core.event#_c869QuN8EeqGV8L4J4n50w"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/ex-heating-rod/M2_cycle.bum|org.eventb.core.machineFile#M2_cycle|org.eventb.core.event#_c869QuN8EeqGV8L4J4n50w|org.eventb.core.action#_c87kVeN8EeqGV8L4J4n50w"/>
+<org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/ex-heating-rod/M3_close_loop.bum|org.eventb.core.machineFile#M3_close_loop|org.eventb.core.event#_e4KWlOOrEeqGV8L4J4n50w"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/ex-heating-rod/M3_close_loop.bpo|org.eventb.core.poFile#M3_close_loop|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/ex-heating-rod/M3_close_loop.bpo|org.eventb.core.poFile#M3_close_loop|org.eventb.core.poSequent#Plant\/act1\/SIM|org.eventb.core.poPredicateSet#SEQHYP"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="Plant/act2/SIM" org.eventb.core.accurate="true" org.eventb.core.poDesc="Action simulation" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/ex-heating-rod/M3_close_loop.bpo|org.eventb.core.poFile#M3_close_loop|org.eventb.core.poPredicateSet#EVTALLHYPC0_specificatip'"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="T(lopen(now) ◁ fa)=T(lopen(now) ◁ fa)" org.eventb.core.source="/ex-heating-rod/M2_cycle.bum|org.eventb.core.machineFile#M2_cycle|org.eventb.core.event#_c869QuN8EeqGV8L4J4n50w|org.eventb.core.action#_c88LYON8EeqGV8L4J4n50w"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/ex-heating-rod/M2_cycle.bum|org.eventb.core.machineFile#M2_cycle|org.eventb.core.event#_c869QuN8EeqGV8L4J4n50w"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/ex-heating-rod/M2_cycle.bum|org.eventb.core.machineFile#M2_cycle|org.eventb.core.event#_c869QuN8EeqGV8L4J4n50w|org.eventb.core.action#_c88LYON8EeqGV8L4J4n50w"/>
+<org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/ex-heating-rod/M3_close_loop.bum|org.eventb.core.machineFile#M3_close_loop|org.eventb.core.event#_e4KWlOOrEeqGV8L4J4n50w"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/ex-heating-rod/M3_close_loop.bpo|org.eventb.core.poFile#M3_close_loop|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/ex-heating-rod/M3_close_loop.bpo|org.eventb.core.poFile#M3_close_loop|org.eventb.core.poSequent#Plant\/act2\/SIM|org.eventb.core.poPredicateSet#SEQHYP"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTC0_specificatip'" org.eventb.core.parentSet="/ex-heating-rod/M3_close_loop.bpo|org.eventb.core.poFile#M3_close_loop|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poIdentifier name="T'" org.eventb.core.type="ℙ(R×R)"/>
+<org.eventb.core.poIdentifier name="tx" org.eventb.core.type="R"/>
+<org.eventb.core.poIdentifier name="now'" org.eventb.core.type="R"/>
+<org.eventb.core.poIdentifier name="s'" org.eventb.core.type="sysSTATE"/>
+<org.eventb.core.poIdentifier name="fx" org.eventb.core.type="ℙ(R×R)"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPC0_specificatip'" org.eventb.core.parentSet="/ex-heating-rod/M3_close_loop.bpo|org.eventb.core.poFile#M3_close_loop|org.eventb.core.poPredicateSet#EVTIDENTC0_specificatip'" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="s=RUN" org.eventb.core.source="/ex-heating-rod/M3_close_loop.bum|org.eventb.core.machineFile#M3_close_loop|org.eventb.core.event#_e4KWlOOrEeqGV8L4J4n50w|org.eventb.core.guard#_e4K9oOOrEeqGV8L4J4n50w"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poSequent name="Ctrl/grd5/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/ex-heating-rod/M3_close_loop.bpo|org.eventb.core.poFile#M3_close_loop|org.eventb.core.poPredicateSet#EVTHYPC0_specificatip(("/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀t⦂R·t∈(Rpos ⦂ ℙ(R))∧t∈openclosed(now,now plus tx)⇒t∈dom(fx)∧fx∈(R ⦂ ℙ(R)) ⇸ (R ⦂ ℙ(R))" org.eventb.core.source="/ex-heating-rod/M3_close_loop.bum|org.eventb.core.machineFile#M3_close_loop|org.eventb.core.event#_e4K9puOrEeqGV8L4J4n50w|org.eventb.core.guard#_e4LkteOrEeqGV8L4J4n50x"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/ex-heating-rod/M3_close_loop.bum|org.eventb.core.machineFile#M3_close_loop|org.eventb.core.event#_e4K9puOrEeqGV8L4J4n50w|org.eventb.core.guard#_e4LkteOrEeqGV8L4J4n50x"/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/ex-heating-rod/M3_close_loop.bpo|org.eventb.core.poFile#M3_close_loop|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/ex-heating-rod/M3_close_loop.bpo|org.eventb.core.poFile#M3_close_loop|org.eventb.core.poPredicateSet#EVTHYPC0_specificatip(("/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="Ctrl/type_ta/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/ex-heating-rod/M3_close_loop.bpo|org.eventb.core.poFile#M3_close_loop|org.eventb.core.poPredicateSet#EVTALLHYPC0_specificatip("/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="tx∈(Rpos ⦂ ℙ(R))" org.eventb.core.source="/ex-heating-rod/M3_close_loop.bum|org.eventb.core.machineFile#M3_close_loop|org.eventb.core.invariant#_ShBTMADVEeufnOcimimBrA"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/ex-heating-rod/M3_close_loop.bum|org.eventb.core.machineFile#M3_close_loop|org.eventb.core.event#_e4K9puOrEeqGV8L4J4n50w"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/ex-heating-rod/M3_close_loop.bum|org.eventb.core.machineFile#M3_close_loop|org.eventb.core.invariant#_ShBTMADVEeufnOcimimBrA"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/ex-heating-rod/M3_close_loop.bpo|org.eventb.core.poFile#M3_close_loop|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/ex-heating-rod/M3_close_loop.bpo|org.eventb.core.poFile#M3_close_loop|org.eventb.core.poSequent#Ctrl\/type_ta\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/ex-heating-rod/M3_close_loop.bpo|org.eventb.core.poFile#M3_close_loop|org.eventb.core.poPredicateSet#HYPC0_specificatio{|org.eventb.core.poPredicate#PRD3"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="Ctrl/type_fa/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/ex-heating-rod/M3_close_loop.bpo|org.eventb.core.poFile#M3_close_loop|org.eventb.core.poPredicateSet#EVTALLHYPC0_specificatip("/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="fx∈(Rpos ⦂ ℙ(R)) → (R ⦂ ℙ(R))" org.eventb.core.source="/ex-heating-rod/M3_close_loop.bum|org.eventb.core.machineFile#M3_close_loop|org.eventb.core.invariant#_e4KWkOOrEeqGV8L4J4n50w"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/ex-heating-rod/M3_close_loop.bum|org.eventb.core.machineFile#M3_close_loop|org.eventb.core.event#_e4K9puOrEeqGV8L4J4n50w"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/ex-heating-rod/M3_close_loop.bum|org.eventb.core.machineFile#M3_close_loop|org.eventb.core.invariant#_e4KWkOOrEeqGV8L4J4n50w"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/ex-heating-rod/M3_close_loop.bpo|org.eventb.core.poFile#M3_close_loop|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/ex-heating-rod/M3_close_loop.bpo|org.eventb.core.poFile#M3_close_loop|org.eventb.core.poSequent#Ctrl\/type_fa\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/ex-heating-rod/M3_close_loop.bpo|org.eventb.core.poFile#M3_close_loop|org.eventb.core.poPredicateSet#HYPC0_specificatio{|org.eventb.core.poPredicate#PRD4"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="Ctrl/safe_fa/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/ex-heating-rod/M3_close_loop.bpo|org.eventb.core.poFile#M3_close_loop|org.eventb.core.poPredicateSet#EVTALLHYPC0_specificatip("/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="RUN=RUN⇒(∀t⦂R·t∈(Rpos ⦂ ℙ(R))∧t∈openclosed(now,now plus tx)⇒fx(t)∈closed(Tmin,Tmax))" org.eventb.core.source="/ex-heating-rod/M3_close_loop.bum|org.eventb.core.machineFile#M3_close_loop|org.eventb.core.invariant#_e4KWkeOrEeqGV8L4J4n50w"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/ex-heating-rod/M3_close_loop.bum|org.eventb.core.machineFile#M3_close_loop|org.eventb.core.event#_e4K9puOrEeqGV8L4J4n50w"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/ex-heating-rod/M3_close_loop.bum|org.eventb.core.machineFile#M3_close_loop|org.eventb.core.invariant#_e4KWkeOrEeqGV8L4J4n50w"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/ex-heating-rod/M3_close_loop.bpo|org.eventb.core.poFile#M3_close_loop|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/ex-heating-rod/M3_close_loop.bpo|org.eventb.core.poFile#M3_close_loop|org.eventb.core.poSequent#Ctrl\/safe_fa\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/ex-heating-rod/M3_close_loop.bpo|org.eventb.core.poFile#M3_close_loop|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD6"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTC0_specificatip(" org.eventb.core.parentSet="/ex-heating-rod/M3_close_loop.bpo|org.eventb.core.poFile#M3_close_loop|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poIdentifier name="tx" org.eventb.core.type="R"/>
+<org.eventb.core.poIdentifier name="s'" org.eventb.core.type="sysSTATE"/>
+<org.eventb.core.poIdentifier name="fa'" org.eventb.core.type="ℙ(R×R)"/>
+<org.eventb.core.poIdentifier name="ta'" org.eventb.core.type="R"/>
+<org.eventb.core.poIdentifier name="fx" org.eventb.core.type="ℙ(R×R)"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTHYPC0_specificatip((" org.eventb.core.parentSet="/ex-heating-rod/M3_close_loop.bpo|org.eventb.core.poFile#M3_close_loop|org.eventb.core.poPredicateSet#EVTIDENTC0_specificatip(" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="tx∈(Rpos ⦂ ℙ(R))" org.eventb.core.source="/ex-heating-rod/M3_close_loop.bum|org.eventb.core.machineFile#M3_close_loop|org.eventb.core.event#_e4K9puOrEeqGV8L4J4n50w|org.eventb.core.guard#_U23A0ADjEeufnOcimimBrA"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="fx∈(Rpos ⦂ ℙ(R)) → (R ⦂ ℙ(R))" org.eventb.core.source="/ex-heating-rod/M3_close_loop.bum|org.eventb.core.machineFile#M3_close_loop|org.eventb.core.event#_e4K9puOrEeqGV8L4J4n50w|org.eventb.core.guard#_e4LkseOrEeqGV8L4J4n50w"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPC0_specificatip(" org.eventb.core.parentSet="/ex-heating-rod/M3_close_loop.bpo|org.eventb.core.poFile#M3_close_loop|org.eventb.core.poPredicateSet#EVTHYPC0_specificatip((" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="∀t⦂R·t∈(Rpos ⦂ ℙ(R))∧t∈openclosed(now,now plus tx)⇒fx(t)∈closed(Tmin,Tmax)" org.eventb.core.source="/ex-heating-rod/M3_close_loop.bum|org.eventb.core.machineFile#M3_close_loop|org.eventb.core.event#_e4K9puOrEeqGV8L4J4n50w|org.eventb.core.guard#_e4LkteOrEeqGV8L4J4n50x"/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="s=DECISION" org.eventb.core.source="/ex-heating-rod/M3_close_loop.bum|org.eventb.core.machineFile#M3_close_loop|org.eventb.core.event#_e4K9puOrEeqGV8L4J4n50w|org.eventb.core.guard#_U23n4ADjEeufnOcimimBrA"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="HYPC0_specificatio{" org.eventb.core.parentSet="/ex-heating-rod/M3_close_loop.bpo|org.eventb.core.poFile#M3_close_loop|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="T∈(Rpos ⦂ ℙ(R)) → (R ⦂ ℙ(R))" org.eventb.core.source="/ex-heating-rod/M3_close_loop.bum|org.eventb.core.machineFile#M3_close_loop|org.eventb.core.invariant#_e4JvguOrEeqGV8L4J4n50w"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="now∈(Rpos ⦂ ℙ(R))" org.eventb.core.source="/ex-heating-rod/M3_close_loop.bum|org.eventb.core.machineFile#M3_close_loop|org.eventb.core.invariant#_e4Jvg-OrEeqGV8L4J4n50w"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="s∈sysSTATE" org.eventb.core.source="/ex-heating-rod/M3_close_loop.bum|org.eventb.core.machineFile#M3_close_loop|org.eventb.core.invariant#_e4JvhOOrEeqGV8L4J4n50w"/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="ta∈(Rpos ⦂ ℙ(R))" org.eventb.core.source="/ex-heating-rod/M3_close_loop.bum|org.eventb.core.machineFile#M3_close_loop|org.eventb.core.invariant#_ShBTMADVEeufnOcimimBrA"/>
+<org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="fa∈(Rpos ⦂ ℙ(R)) → (R ⦂ ℙ(R))" org.eventb.core.source="/ex-heating-rod/M3_close_loop.bum|org.eventb.core.machineFile#M3_close_loop|org.eventb.core.invariant#_e4KWkOOrEeqGV8L4J4n50w"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="HYPC0_specificatio|" org.eventb.core.parentSet="/ex-heating-rod/M3_close_loop.bpo|org.eventb.core.poFile#M3_close_loop|org.eventb.core.poPredicateSet#HYPC0_specificatio{" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="∀t⦂R·t∈(Rpos ⦂ ℙ(R))∧t∈closed(zero ⦂ R,now)⇒T(t)∈closed(Tmin,Tmax)" org.eventb.core.source="/ex-heating-rod/M3_close_loop.bum|org.eventb.core.machineFile#M3_close_loop|org.eventb.core.invariant#_U22ZwADjEeufnOcimimBrA"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/ex-heating-rod/M3_close_loop.bpo|org.eventb.core.poFile#M3_close_loop|org.eventb.core.poPredicateSet#HYPC0_specificatio\|" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicate name="PRD6" org.eventb.core.predicate="s=RUN⇒(∀t⦂R·t∈(Rpos ⦂ ℙ(R))∧t∈openclosed(now,now plus ta)⇒fa(t)∈closed(Tmin,Tmax))" org.eventb.core.source="/ex-heating-rod/M3_close_loop.bum|org.eventb.core.machineFile#M3_close_loop|org.eventb.core.invariant#_e4KWkeOrEeqGV8L4J4n50w"/>
+</org.eventb.core.poPredicateSet>
+</org.eventb.core.poFile>

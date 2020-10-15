@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.theory.core.theoryLanguageRoot org.eventb.core.configuration="org.eventb.theory.core.tul">
+<org.eventb.theory.core.availableTheoryProject name="'" org.eventb.theory.core.availableTheoryProject="/theory-axiom-real">
+<org.eventb.theory.core.availableTheory name="(" org.eventb.theory.core.availableTheory="/theory-axiom-real/Real_ext.dtf|org.eventb.theory.core.deployedTheoryRoot#Real_ext"/>
+<org.eventb.theory.core.availableTheory name=")" org.eventb.theory.core.availableTheory="/theory-axiom-real/Intervals.dtf|org.eventb.theory.core.deployedTheoryRoot#Intervals"/>
+</org.eventb.theory.core.availableTheoryProject>
+</org.eventb.theory.core.theoryLanguageRoot>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.machineFile org.eventb.core.comment="&#10;   Notes: Generic abstract problem of hybrid systems " org.eventb.core.configuration="org.eventb.core.fwd" org.eventb.core.generated="false" org.eventb.texttools.text_lastmodified="1602756584125" org.eventb.texttools.text_representation="machine M0_specification&#10;/*&#10;   Notes: Generic abstract problem of hybrid systems */&#10; sees C0_specification&#10;&#10;variables d // abstract continuous var&#10;&#10;&#10;invariants&#10;  @type_d d∈Rpos→D // x_p : time_domain --&gt; abstract domain&#10;  @safety_d ∀ t·t∈Rpos⇒ Sa(d(t))=TRUE&#10;  /* Abstract Safety Property *P* holds&#10;     for system state *x_p* at anytime */&#10;&#10;events&#10;  event INITIALISATION&#10;  /* Big-step semantics of all controlled hybrid system:&#10;     They are initialized to hold safety property */&#10;    then&#10;      @act1 d :∣  d' ∈ Rpos→D ∧ (∀ t·t∈Rpos⇒ Sa(d'(t))=TRUE )&#10;  end&#10;&#10;  event Update&#10;    any fa&#10;    where&#10;      @grd1 fa∈Rpos→D∧(∀ t·t∈Rpos⇒ Sa(fa(t))=TRUE)&#10;    then&#10;      @act1 d≔fa&#10;  end&#10;end&#10;" version="5">
+<org.eventb.core.seesContext name="_Ws0vEOL2EeqkvOQFd0OwrA" org.eventb.core.target="C0_specification"/>
+<org.eventb.core.event name="'" org.eventb.core.comment="Big-step semantics of all controlled hybrid system:&#10;     They are initialized to hold safety property " org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.generated="false" org.eventb.core.label="INITIALISATION">
+<org.eventb.core.action name="_Ws1WIOL2EeqkvOQFd0OwrA" org.eventb.core.assignment="d :∣  d' ∈ Rpos→D ∧ (∀ t·t∈Rpos⇒ Sa(d'(t))=TRUE )" org.eventb.core.generated="false" org.eventb.core.label="act1"/>
+</org.eventb.core.event>
+<org.eventb.core.variable name="_Ws1WIeL2EeqkvOQFd0OwrA" org.eventb.core.comment="abstract continuous var" org.eventb.core.generated="false" org.eventb.core.identifier="d"/>
+<org.eventb.core.invariant name="_aIZeEOL2EeqkvOQFd0OwrA" org.eventb.core.comment="x_p : time_domain --&gt; abstract domain" org.eventb.core.generated="false" org.eventb.core.label="type_d" org.eventb.core.predicate="d∈Rpos→D"/>
+<org.eventb.core.invariant name="_aIaFIOL2EeqkvOQFd0OwrA" org.eventb.core.comment="Abstract Safety Property *P* holds&#10;     for system state *x_p* at anytime " org.eventb.core.generated="false" org.eventb.core.label="safety_d" org.eventb.core.predicate="∀ t·t∈Rpos⇒ Sa(d(t))=TRUE"/>
+<org.eventb.core.event name="_aIaFIOL2EeqkvOQFd0OwrB" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.generated="false" org.eventb.core.label="Update">
+<org.eventb.core.parameter name="'" org.eventb.core.generated="false" org.eventb.core.identifier="fa"/>
+<org.eventb.core.guard name="(" org.eventb.core.generated="false" org.eventb.core.label="grd1" org.eventb.core.predicate="fa∈Rpos→D∧(∀ t·t∈Rpos⇒ Sa(fa(t))=TRUE)"/>
+<org.eventb.core.action name=")" org.eventb.core.assignment="d≔fa" org.eventb.core.generated="false" org.eventb.core.label="act1"/>
+</org.eventb.core.event>
+</org.eventb.core.machineFile>

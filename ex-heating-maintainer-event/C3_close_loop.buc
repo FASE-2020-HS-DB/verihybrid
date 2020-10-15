@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.contextFile org.eventb.core.comment="&#10;   Notes: Context for close-loop arch " org.eventb.core.configuration="org.eventb.core.fwd" org.eventb.core.generated="false" org.eventb.texttools.text_lastmodified="1602756827054" org.eventb.texttools.text_representation="context C3_close_loop&#10;/*&#10;   Notes: Context for close-loop arch */&#10; extends C2_cycle&#10;&#10;sets sysSTATE // system state&#10;&#10;&#10;constants RUN DECISION&#10;          deltaT // sampling time&#10;&#10;&#10;axioms&#10;  @partition_sysSTATE partition(sysSTATE, {RUN}, {DECISION})&#10;  @type_deltaT deltaT ∈ Rpos&#10;  @prop_deltaT lt(zero, deltaT)&#10;end&#10;" version="3">
+<org.eventb.core.extendsContext name="_lZc5UOOrEeqGV8L4J4n50w" org.eventb.core.target="C2_cycle"/>
+<org.eventb.core.carrierSet name="_lZc5UeOrEeqGV8L4J4n50w" org.eventb.core.comment="system state" org.eventb.core.generated="false" org.eventb.core.identifier="sysSTATE"/>
+<org.eventb.core.constant name="_lZc5UuOrEeqGV8L4J4n50w" org.eventb.core.generated="false" org.eventb.core.identifier="RUN"/>
+<org.eventb.core.constant name="_lZc5U-OrEeqGV8L4J4n50w" org.eventb.core.generated="false" org.eventb.core.identifier="DECISION"/>
+<org.eventb.core.constant name="_lZdgYOOrEeqGV8L4J4n50w" org.eventb.core.comment="sampling time" org.eventb.core.generated="false" org.eventb.core.identifier="deltaT"/>
+<org.eventb.core.axiom name="_lZdgYeOrEeqGV8L4J4n50w" org.eventb.core.generated="false" org.eventb.core.label="partition_sysSTATE" org.eventb.core.predicate="partition(sysSTATE, {RUN}, {DECISION})"/>
+<org.eventb.core.axiom name="_lZdgYuOrEeqGV8L4J4n50w" org.eventb.core.generated="false" org.eventb.core.label="type_deltaT" org.eventb.core.predicate="deltaT ∈ Rpos"/>
+<org.eventb.core.axiom name="_lZdgY-OrEeqGV8L4J4n50w" org.eventb.core.generated="false" org.eventb.core.label="prop_deltaT" org.eventb.core.predicate="lt(zero, deltaT)"/>
+</org.eventb.core.contextFile>

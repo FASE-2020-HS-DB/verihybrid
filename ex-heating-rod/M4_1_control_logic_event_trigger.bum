@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.machineFile org.eventb.core.comment="&#10;   Notes: Event-trigger design&#10;   Event-trigger design is a parameterized time-trigger design " org.eventb.core.configuration="org.eventb.core.fwd" org.eventb.core.generated="false" org.eventb.texttools.text_lastmodified="1602756684062" org.eventb.texttools.text_representation="machine M4_1_control_logic_event_trigger&#10;/*&#10;   Notes: Event-trigger design&#10;   Event-trigger design is a parameterized time-trigger design */&#10; refines M3_close_loop  sees C4_control_logic&#10;&#10;variables T // continuous var temperature&#10;          now // continuous var time&#10;          s // system state&#10;          fa // predicted safe time series by the controller&#10;          q // discrete state&#10;          ta // predicted frame by the controller&#10;&#10;&#10;invariants&#10;  @type_T T∈Rpos→R&#10;  @type_now now∈Rpos&#10;  @type_s s∈sysSTATE&#10;  @type_fa fa ∈ Rpos → R&#10;  @type_ta ta∈Rpos&#10;  @type_q q∈ctrlSTATE&#10;  @safe_fa s = RUN ⇒   (∀t·t∈Rpos∧t∈openclosed(now, now plus ta)⇒fa(t)∈closed(Tmin,Tmax))&#10;  @safety01 ∀t·t∈Rpos∧t∈closed(zero, now)⇒ T(t)∈closed(Tmin,Tmax)&#10;&#10;events&#10;  event INITIALISATION&#10;    then&#10;      @act1 T ≔  (λ t · t ∈ Rpos ∣ Tmin)   { zero plus tact ↦ Ton(zero↦Tmin)(zero plus tact)}&#10;      @act2 now ≔ zero&#10;      @act3 s ≔ DECISION&#10;      @act5 fa :∈ Rpos → R&#10;      @act6 q ≔ ON&#10;      @act9 ta:∈ Rpos&#10;  end&#10;&#10;  event Plant_ON refines Plant&#10;    where&#10;      @grd1 s = RUN&#10;      @grd2 q = ON&#10;    then&#10;      @act1 now ≔ now plus ta&#10;      @act2 T ≔ (T   (lopen(now)◁ fa))&#10;      @act3 s ≔ DECISION&#10;  end&#10;&#10;  event Plant_OFF refines Plant&#10;    where&#10;      @grd1 s = RUN&#10;      @grd2 q = OFF&#10;    then&#10;      @act1 now ≔ now plus ta&#10;      @act2 T ≔ (T   (lopen(now)◁ fa))&#10;      @act3 s ≔ DECISION&#10;  end&#10;&#10;  event Plant_ONOFF refines Plant&#10;    where&#10;      @grd1 s = RUN&#10;      @grd2 q = ONOFF&#10;    then&#10;      @act1 now ≔ now plus ta&#10;      @act2 T ≔ (T   (lopen(now)◁ fa))&#10;      @act3 s ≔ DECISION&#10;  end&#10;&#10;  event Plant_OFFON refines Plant&#10;    where&#10;      @grd1 s = RUN&#10;      @grd2 q = OFFON&#10;    then&#10;      @act1 now ≔ now plus ta&#10;      @act2 T ≔ (T   (lopen(now)◁ fa))&#10;      @act3 s ≔ DECISION&#10;  end&#10;&#10;  event Ctrl_ON_safe&#10;  /* If PREDICITION is safe&#10;     fx can be followed for tx to be safe */&#10;  refines Ctrl&#10;    any tx fx PREDICTION&#10;    where&#10;      @grd6 tx∈Rpos&#10;      @grd7 fx∈Rpos→R&#10;      @grd1 s = DECISION&#10;      @grd2 q = ON ∨ q = OFFON&#10;      @grd3 leq(T(now) plus PREDICTION, Tmax) // predication based on sensor reading&#10;      @grd5 ∀t·t∈Rpos∧t∈openclosed(now, now plus tx)⇒fx(t)∈closed(Tmin,Tmax)&#10;    then&#10;      @act1 s ≔ RUN&#10;      @act3 fa ≔ fx&#10;      @act4 q ≔ ON&#10;      @act5 ta≔ tx&#10;  end&#10;&#10;  event Ctrl_ON_unsafe // when on mode is unsafe, switch&#10;  refines Ctrl&#10;    any tx fx PREDICTION&#10;    where&#10;      @grd6 tx∈Rpos&#10;      @grd7 fx∈Rpos→R&#10;      @grd1 s = DECISION&#10;      @grd2 q = ON ∨ q = OFFON&#10;      @grd3 gt(T(now) plus PREDICTION, Tmax)&#10;      @grd5 ∀t·t∈Rpos∧t∈openclosed(now, now plus tx)⇒fx(t)∈closed(Tmin,Tmax)&#10;    then&#10;      @act1 s ≔ RUN&#10;      @act2 fa ≔ fx&#10;      @act3 q ≔ ONOFF&#10;      @act4 ta≔tx&#10;  end&#10;&#10;  event Ctrl_OFF_safe refines Ctrl&#10;    any tx fx PREDICTION&#10;    where&#10;      @grd6 tx∈Rpos&#10;      @grd7 fx∈Rpos→R&#10;      @grd1 s = DECISION&#10;      @grd2 q = OFF ∨ q = ONOFF&#10;      @grd3 leq(Tmin, T(now) plus PREDICTION)&#10;      @grd5 ∀t·t∈Rpos∧t∈openclosed(now, now plus tx)⇒fx(t)∈closed(Tmin,Tmax)&#10;    then&#10;      @act1 s ≔ RUN&#10;      @act3 fa ≔ fx&#10;      @act4 q ≔ OFF&#10;      @act5 ta≔tx&#10;  end&#10;&#10;  event Ctrl_OFF_unsafe refines Ctrl&#10;    any tx fx PREDICTION&#10;    where&#10;      @grd6 tx∈Rpos&#10;      @grd7 fx∈Rpos→R&#10;      @grd1 s = DECISION&#10;      @grd2 q = OFF ∨ q = ONOFF&#10;      @grd3 gt(Tmin, T(now) plus PREDICTION)&#10;      @grd5 ∀t·t∈Rpos∧t∈openclosed(now, now plus tx)⇒fx(t)∈closed(Tmin,Tmax)&#10;    then&#10;      @act1 s ≔ RUN&#10;      @act3 fa ≔ fx&#10;      @act4 q ≔ OFFON&#10;      @act5 ta≔tx&#10;  end&#10;end&#10;" version="5">
+<org.eventb.core.refinesMachine name="_grraEADgEeufnOcimimBrA" org.eventb.core.target="M3_close_loop"/>
+<org.eventb.core.seesContext name="_grsBIADgEeufnOcimimBrA" org.eventb.core.target="C4_control_logic"/>
+<org.eventb.core.event name="'" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.generated="false" org.eventb.core.label="INITIALISATION">
+<org.eventb.core.action name="_bQIXZgDgEeufnOcimimBrA" org.eventb.core.assignment="T ≔  (λ t · t ∈ Rpos ∣ Tmin)   { zero plus tact ↦ Ton(zero↦Tmin)(zero plus tact)}" org.eventb.core.generated="false" org.eventb.core.label="act1"/>
+<org.eventb.core.action name="_bQI-cADgEeufnOcimimBrA" org.eventb.core.assignment="now ≔ zero" org.eventb.core.generated="false" org.eventb.core.label="act2"/>
+<org.eventb.core.action name="_bQI-cQDgEeufnOcimimBrA" org.eventb.core.assignment="s ≔ DECISION" org.eventb.core.generated="false" org.eventb.core.label="act3"/>
+<org.eventb.core.action name="_UFgQ0ADtEeufnOcimimBrA" org.eventb.core.assignment="fa :∈ Rpos → R" org.eventb.core.generated="false" org.eventb.core.label="act5"/>
+<org.eventb.core.action name="_UFgQ0QDtEeufnOcimimBrA" org.eventb.core.assignment="q ≔ ON" org.eventb.core.generated="false" org.eventb.core.label="act6"/>
+<org.eventb.core.action name="_UFg34ADtEeufnOcimimBrA" org.eventb.core.assignment="ta:∈ Rpos" org.eventb.core.generated="false" org.eventb.core.label="act9"/>
+</org.eventb.core.event>
+<org.eventb.core.variable name="_bQHJQADgEeufnOcimimBrA" org.eventb.core.comment="continuous var temperature" org.eventb.core.generated="false" org.eventb.core.identifier="T"/>
+<org.eventb.core.variable name="_bQHJQQDgEeufnOcimimBrA" org.eventb.core.comment="continuous var time" org.eventb.core.generated="false" org.eventb.core.identifier="now"/>
+<org.eventb.core.variable name="_bQHJQgDgEeufnOcimimBrA" org.eventb.core.comment="system state" org.eventb.core.generated="false" org.eventb.core.identifier="s"/>
+<org.eventb.core.variable name="_bQHJQwDgEeufnOcimimBrA" org.eventb.core.comment="predicted safe time series by the controller" org.eventb.core.generated="false" org.eventb.core.identifier="fa"/>
+<org.eventb.core.variable name="_UFg34QDtEeufnOcimimBrA" org.eventb.core.comment="discrete state" org.eventb.core.generated="false" org.eventb.core.identifier="q"/>
+<org.eventb.core.variable name="_bQHJRADgEeufnOcimimBrA" org.eventb.core.comment="predicted frame by the controller" org.eventb.core.generated="false" org.eventb.core.identifier="ta"/>
+<org.eventb.core.invariant name="_bQHJRQDgEeufnOcimimBrA" org.eventb.core.generated="false" org.eventb.core.label="type_T" org.eventb.core.predicate="T∈Rpos→R"/>
+<org.eventb.core.invariant name="_bQHJRgDgEeufnOcimimBrA" org.eventb.core.generated="false" org.eventb.core.label="type_now" org.eventb.core.predicate="now∈Rpos"/>
+<org.eventb.core.invariant name="_bQHwUADgEeufnOcimimBrA" org.eventb.core.generated="false" org.eventb.core.label="type_s" org.eventb.core.predicate="s∈sysSTATE"/>
+<org.eventb.core.invariant name="_bQHwUQDgEeufnOcimimBrA" org.eventb.core.generated="false" org.eventb.core.label="type_fa" org.eventb.core.predicate="fa ∈ Rpos → R"/>
+<org.eventb.core.invariant name="_bQHwUgDgEeufnOcimimBrA" org.eventb.core.generated="false" org.eventb.core.label="type_ta" org.eventb.core.predicate="ta∈Rpos"/>
+<org.eventb.core.invariant name="_UFhe8ADtEeufnOcimimBrA" org.eventb.core.generated="false" org.eventb.core.label="type_q" org.eventb.core.predicate="q∈ctrlSTATE"/>
+<org.eventb.core.invariant name="_bQHwUwDgEeufnOcimimBrA" org.eventb.core.generated="false" org.eventb.core.label="safe_fa" org.eventb.core.predicate="s = RUN ⇒   (∀t·t∈Rpos∧t∈openclosed(now, now plus ta)⇒fa(t)∈closed(Tmin,Tmax))"/>
+<org.eventb.core.invariant name="_bQHwVADgEeufnOcimimBrA" org.eventb.core.generated="false" org.eventb.core.label="safety01" org.eventb.core.predicate="∀t·t∈Rpos∧t∈closed(zero, now)⇒ T(t)∈closed(Tmin,Tmax)"/>
+<org.eventb.core.event name="_UFhe8QDtEeufnOcimimBrA" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.generated="false" org.eventb.core.label="Plant_ON">
+<org.eventb.core.refinesEvent name="_UFiGAADtEeufnOcimimBrA" org.eventb.core.target="Plant"/>
+<org.eventb.core.guard name="_bQIXYwDgEeufnOcimimBrA" org.eventb.core.generated="false" org.eventb.core.label="grd1" org.eventb.core.predicate="s = RUN"/>
+<org.eventb.core.guard name="_bQI-dQDgEeufnOcimimBrA" org.eventb.core.generated="false" org.eventb.core.label="grd2" org.eventb.core.predicate="q = ON"/>
+<org.eventb.core.action name="_bQKMkADgEeufnOcimimBrA" org.eventb.core.assignment="now ≔ now plus ta" org.eventb.core.generated="false" org.eventb.core.label="act1"/>
+<org.eventb.core.action name="_UFiGAQDtEeufnOcimimBrA" org.eventb.core.assignment="T ≔ (T   (lopen(now)◁ fa))" org.eventb.core.generated="false" org.eventb.core.label="act2"/>
+<org.eventb.core.action name="_bQKMkQDgEeufnOcimimBrA" org.eventb.core.assignment="s ≔ DECISION" org.eventb.core.generated="false" org.eventb.core.label="act3"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="_UFiGAgDtEeufnOcimimBrA" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.generated="false" org.eventb.core.label="Plant_OFF">
+<org.eventb.core.refinesEvent name="_UFiGAwDtEeufnOcimimBrA" org.eventb.core.target="Plant"/>
+<org.eventb.core.guard name="_UFitEADtEeufnOcimimBrA" org.eventb.core.generated="false" org.eventb.core.label="grd1" org.eventb.core.predicate="s = RUN"/>
+<org.eventb.core.guard name="_UFitEQDtEeufnOcimimBrA" org.eventb.core.generated="false" org.eventb.core.label="grd2" org.eventb.core.predicate="q = OFF"/>
+<org.eventb.core.action name="_UFitEgDtEeufnOcimimBrA" org.eventb.core.assignment="now ≔ now plus ta" org.eventb.core.generated="false" org.eventb.core.label="act1"/>
+<org.eventb.core.action name="_UFitEwDtEeufnOcimimBrA" org.eventb.core.assignment="T ≔ (T   (lopen(now)◁ fa))" org.eventb.core.generated="false" org.eventb.core.label="act2"/>
+<org.eventb.core.action name="_UFitFADtEeufnOcimimBrA" org.eventb.core.assignment="s ≔ DECISION" org.eventb.core.generated="false" org.eventb.core.label="act3"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="_UFitFQDtEeufnOcimimBrA" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.generated="false" org.eventb.core.label="Plant_ONOFF">
+<org.eventb.core.refinesEvent name="_UFitFgDtEeufnOcimimBrA" org.eventb.core.target="Plant"/>
+<org.eventb.core.guard name="_UFitFwDtEeufnOcimimBrA" org.eventb.core.generated="false" org.eventb.core.label="grd1" org.eventb.core.predicate="s = RUN"/>
+<org.eventb.core.guard name="_UFitGADtEeufnOcimimBrA" org.eventb.core.generated="false" org.eventb.core.label="grd2" org.eventb.core.predicate="q = ONOFF"/>
+<org.eventb.core.action name="_UFjUIADtEeufnOcimimBrA" org.eventb.core.assignment="now ≔ now plus ta" org.eventb.core.generated="false" org.eventb.core.label="act1"/>
+<org.eventb.core.action name="_UFjUIQDtEeufnOcimimBrA" org.eventb.core.assignment="T ≔ (T   (lopen(now)◁ fa))" org.eventb.core.generated="false" org.eventb.core.label="act2"/>
+<org.eventb.core.action name="_UFjUIgDtEeufnOcimimBrA" org.eventb.core.assignment="s ≔ DECISION" org.eventb.core.generated="false" org.eventb.core.label="act3"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="_UFjUIwDtEeufnOcimimBrA" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.generated="false" org.eventb.core.label="Plant_OFFON">
+<org.eventb.core.refinesEvent name="_UFjUJADtEeufnOcimimBrA" org.eventb.core.target="Plant"/>
+<org.eventb.core.guard name="_UFjUJQDtEeufnOcimimBrA" org.eventb.core.generated="false" org.eventb.core.label="grd1" org.eventb.core.predicate="s = RUN"/>
+<org.eventb.core.guard name="_UFjUJgDtEeufnOcimimBrA" org.eventb.core.generated="false" org.eventb.core.label="grd2" org.eventb.core.predicate="q = OFFON"/>
+<org.eventb.core.action name="_UFjUJwDtEeufnOcimimBrA" org.eventb.core.assignment="now ≔ now plus ta" org.eventb.core.generated="false" org.eventb.core.label="act1"/>
+<org.eventb.core.action name="_UFjUKADtEeufnOcimimBrA" org.eventb.core.assignment="T ≔ (T   (lopen(now)◁ fa))" org.eventb.core.generated="false" org.eventb.core.label="act2"/>
+<org.eventb.core.action name="_UFj7MADtEeufnOcimimBrA" org.eventb.core.assignment="s ≔ DECISION" org.eventb.core.generated="false" org.eventb.core.label="act3"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="_UFj7MQDtEeufnOcimimBrA" org.eventb.core.comment="If PREDICITION is safe&#10;     fx can be followed for tx to be safe " org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.generated="false" org.eventb.core.label="Ctrl_ON_safe">
+<org.eventb.core.refinesEvent name="_UFj7MgDtEeufnOcimimBrA" org.eventb.core.target="Ctrl"/>
+<org.eventb.core.parameter name="_bQI-dADgEeufnOcimimBrA" org.eventb.core.generated="false" org.eventb.core.identifier="tx"/>
+<org.eventb.core.parameter name="_bQI-cwDgEeufnOcimimBrA" org.eventb.core.generated="false" org.eventb.core.identifier="fx"/>
+<org.eventb.core.parameter name="_UFj7MwDtEeufnOcimimBrA" org.eventb.core.generated="false" org.eventb.core.identifier="PREDICTION"/>
+<org.eventb.core.guard name="_UFj7NADtEeufnOcimimBrA" org.eventb.core.generated="false" org.eventb.core.label="grd6" org.eventb.core.predicate="tx∈Rpos"/>
+<org.eventb.core.guard name="_UFj7NQDtEeufnOcimimBrA" org.eventb.core.generated="false" org.eventb.core.label="grd7" org.eventb.core.predicate="fx∈Rpos→R"/>
+<org.eventb.core.guard name="_UFj7NgDtEeufnOcimimBrA" org.eventb.core.generated="false" org.eventb.core.label="grd1" org.eventb.core.predicate="s = DECISION"/>
+<org.eventb.core.guard name="_UFkiQADtEeufnOcimimBrA" org.eventb.core.generated="false" org.eventb.core.label="grd2" org.eventb.core.predicate="q = ON ∨ q = OFFON"/>
+<org.eventb.core.guard name="_bQJlgADgEeufnOcimimBrA" org.eventb.core.comment="predication based on sensor reading" org.eventb.core.generated="false" org.eventb.core.label="grd3" org.eventb.core.predicate="leq(T(now) plus PREDICTION, Tmax)"/>
+<org.eventb.core.guard name="_bQJlggDgEeufnOcimimBrA" org.eventb.core.generated="false" org.eventb.core.label="grd5" org.eventb.core.predicate="∀t·t∈Rpos∧t∈openclosed(now, now plus tx)⇒fx(t)∈closed(Tmin,Tmax)"/>
+<org.eventb.core.action name="_UFkiQQDtEeufnOcimimBrA" org.eventb.core.assignment="s ≔ RUN" org.eventb.core.generated="false" org.eventb.core.label="act1"/>
+<org.eventb.core.action name="_UFkiQgDtEeufnOcimimBrA" org.eventb.core.assignment="fa ≔ fx" org.eventb.core.generated="false" org.eventb.core.label="act3"/>
+<org.eventb.core.action name="_bQKMkgDgEeufnOcimimBrA" org.eventb.core.assignment="q ≔ ON" org.eventb.core.generated="false" org.eventb.core.label="act4"/>
+<org.eventb.core.action name="_UFkiQwDtEeufnOcimimBrA" org.eventb.core.assignment="ta≔ tx" org.eventb.core.generated="false" org.eventb.core.label="act5"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="_UFkiRADtEeufnOcimimBrA" org.eventb.core.comment="when on mode is unsafe, switch" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.generated="false" org.eventb.core.label="Ctrl_ON_unsafe">
+<org.eventb.core.refinesEvent name="_UFlJUADtEeufnOcimimBrA" org.eventb.core.target="Ctrl"/>
+<org.eventb.core.parameter name="_UFlJUQDtEeufnOcimimBrA" org.eventb.core.generated="false" org.eventb.core.identifier="tx"/>
+<org.eventb.core.parameter name="_UFlJUgDtEeufnOcimimBrA" org.eventb.core.generated="false" org.eventb.core.identifier="fx"/>
+<org.eventb.core.parameter name="_UFlJUwDtEeufnOcimimBrA" org.eventb.core.generated="false" org.eventb.core.identifier="PREDICTION"/>
+<org.eventb.core.guard name="_UFlJVADtEeufnOcimimBrA" org.eventb.core.generated="false" org.eventb.core.label="grd6" org.eventb.core.predicate="tx∈Rpos"/>
+<org.eventb.core.guard name="_UFlJVQDtEeufnOcimimBrA" org.eventb.core.generated="false" org.eventb.core.label="grd7" org.eventb.core.predicate="fx∈Rpos→R"/>
+<org.eventb.core.guard name="_UFlJVgDtEeufnOcimimBrA" org.eventb.core.generated="false" org.eventb.core.label="grd1" org.eventb.core.predicate="s = DECISION"/>
+<org.eventb.core.guard name="_UFlJVwDtEeufnOcimimBrA" org.eventb.core.generated="false" org.eventb.core.label="grd2" org.eventb.core.predicate="q = ON ∨ q = OFFON"/>
+<org.eventb.core.guard name="_UFlJWADtEeufnOcimimBrA" org.eventb.core.generated="false" org.eventb.core.label="grd3" org.eventb.core.predicate="gt(T(now) plus PREDICTION, Tmax)"/>
+<org.eventb.core.guard name="_UFlwYADtEeufnOcimimBrA" org.eventb.core.generated="false" org.eventb.core.label="grd5" org.eventb.core.predicate="∀t·t∈Rpos∧t∈openclosed(now, now plus tx)⇒fx(t)∈closed(Tmin,Tmax)"/>
+<org.eventb.core.action name="_UFlwYQDtEeufnOcimimBrA" org.eventb.core.assignment="s ≔ RUN" org.eventb.core.generated="false" org.eventb.core.label="act1"/>
+<org.eventb.core.action name="_UFlwYgDtEeufnOcimimBrA" org.eventb.core.assignment="fa ≔ fx" org.eventb.core.generated="false" org.eventb.core.label="act2"/>
+<org.eventb.core.action name="_UFlwYwDtEeufnOcimimBrA" org.eventb.core.assignment="q ≔ ONOFF" org.eventb.core.generated="false" org.eventb.core.label="act3"/>
+<org.eventb.core.action name="_UFlwZADtEeufnOcimimBrA" org.eventb.core.assignment="ta≔tx" org.eventb.core.generated="false" org.eventb.core.label="act4"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="_UFlwZQDtEeufnOcimimBrA" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.generated="false" org.eventb.core.label="Ctrl_OFF_safe">
+<org.eventb.core.refinesEvent name="_UFlwZgDtEeufnOcimimBrA" org.eventb.core.target="Ctrl"/>
+<org.eventb.core.parameter name="_UFlwZwDtEeufnOcimimBrA" org.eventb.core.generated="false" org.eventb.core.identifier="tx"/>
+<org.eventb.core.parameter name="_UFlwaADtEeufnOcimimBrA" org.eventb.core.generated="false" org.eventb.core.identifier="fx"/>
+<org.eventb.core.parameter name="_UFmXcADtEeufnOcimimBrA" org.eventb.core.generated="false" org.eventb.core.identifier="PREDICTION"/>
+<org.eventb.core.guard name="_UFmXcQDtEeufnOcimimBrA" org.eventb.core.generated="false" org.eventb.core.label="grd6" org.eventb.core.predicate="tx∈Rpos"/>
+<org.eventb.core.guard name="_UFmXcgDtEeufnOcimimBrA" org.eventb.core.generated="false" org.eventb.core.label="grd7" org.eventb.core.predicate="fx∈Rpos→R"/>
+<org.eventb.core.guard name="_UFmXcwDtEeufnOcimimBrA" org.eventb.core.generated="false" org.eventb.core.label="grd1" org.eventb.core.predicate="s = DECISION"/>
+<org.eventb.core.guard name="_UFmXdADtEeufnOcimimBrA" org.eventb.core.generated="false" org.eventb.core.label="grd2" org.eventb.core.predicate="q = OFF ∨ q = ONOFF"/>
+<org.eventb.core.guard name="_UFmXdQDtEeufnOcimimBrA" org.eventb.core.generated="false" org.eventb.core.label="grd3" org.eventb.core.predicate="leq(Tmin, T(now) plus PREDICTION)"/>
+<org.eventb.core.guard name="_UFmXdgDtEeufnOcimimBrA" org.eventb.core.generated="false" org.eventb.core.label="grd5" org.eventb.core.predicate="∀t·t∈Rpos∧t∈openclosed(now, now plus tx)⇒fx(t)∈closed(Tmin,Tmax)"/>
+<org.eventb.core.action name="_UFmXdwDtEeufnOcimimBrA" org.eventb.core.assignment="s ≔ RUN" org.eventb.core.generated="false" org.eventb.core.label="act1"/>
+<org.eventb.core.action name="_UFm-gADtEeufnOcimimBrA" org.eventb.core.assignment="fa ≔ fx" org.eventb.core.generated="false" org.eventb.core.label="act3"/>
+<org.eventb.core.action name="_UFm-gQDtEeufnOcimimBrA" org.eventb.core.assignment="q ≔ OFF" org.eventb.core.generated="false" org.eventb.core.label="act4"/>
+<org.eventb.core.action name="_UFm-ggDtEeufnOcimimBrA" org.eventb.core.assignment="ta≔tx" org.eventb.core.generated="false" org.eventb.core.label="act5"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="_UFm-gwDtEeufnOcimimBrA" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.generated="false" org.eventb.core.label="Ctrl_OFF_unsafe">
+<org.eventb.core.refinesEvent name="_UFm-hADtEeufnOcimimBrA" org.eventb.core.target="Ctrl"/>
+<org.eventb.core.parameter name="_UFm-hQDtEeufnOcimimBrA" org.eventb.core.generated="false" org.eventb.core.identifier="tx"/>
+<org.eventb.core.parameter name="_UFm-hgDtEeufnOcimimBrA" org.eventb.core.generated="false" org.eventb.core.identifier="fx"/>
+<org.eventb.core.parameter name="_UFm-hwDtEeufnOcimimBrA" org.eventb.core.generated="false" org.eventb.core.identifier="PREDICTION"/>
+<org.eventb.core.guard name="_UFm-iADtEeufnOcimimBrA" org.eventb.core.generated="false" org.eventb.core.label="grd6" org.eventb.core.predicate="tx∈Rpos"/>
+<org.eventb.core.guard name="_UFm-iQDtEeufnOcimimBrA" org.eventb.core.generated="false" org.eventb.core.label="grd7" org.eventb.core.predicate="fx∈Rpos→R"/>
+<org.eventb.core.guard name="_UFnlkADtEeufnOcimimBrA" org.eventb.core.generated="false" org.eventb.core.label="grd1" org.eventb.core.predicate="s = DECISION"/>
+<org.eventb.core.guard name="_UFnlkQDtEeufnOcimimBrA" org.eventb.core.generated="false" org.eventb.core.label="grd2" org.eventb.core.predicate="q = OFF ∨ q = ONOFF"/>
+<org.eventb.core.guard name="_UFnlkgDtEeufnOcimimBrA" org.eventb.core.generated="false" org.eventb.core.label="grd3" org.eventb.core.predicate="gt(Tmin, T(now) plus PREDICTION)"/>
+<org.eventb.core.guard name="_UFnlkwDtEeufnOcimimBrA" org.eventb.core.generated="false" org.eventb.core.label="grd5" org.eventb.core.predicate="∀t·t∈Rpos∧t∈openclosed(now, now plus tx)⇒fx(t)∈closed(Tmin,Tmax)"/>
+<org.eventb.core.action name="_UFnllADtEeufnOcimimBrA" org.eventb.core.assignment="s ≔ RUN" org.eventb.core.generated="false" org.eventb.core.label="act1"/>
+<org.eventb.core.action name="_UFnllQDtEeufnOcimimBrA" org.eventb.core.assignment="fa ≔ fx" org.eventb.core.generated="false" org.eventb.core.label="act3"/>
+<org.eventb.core.action name="_UFnllgDtEeufnOcimimBrA" org.eventb.core.assignment="q ≔ OFFON" org.eventb.core.generated="false" org.eventb.core.label="act4"/>
+<org.eventb.core.action name="_UFnllwDtEeufnOcimimBrA" org.eventb.core.assignment="ta≔tx" org.eventb.core.generated="false" org.eventb.core.label="act5"/>
+</org.eventb.core.event>
+</org.eventb.core.machineFile>

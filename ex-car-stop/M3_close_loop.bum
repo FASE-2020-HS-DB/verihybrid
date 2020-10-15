@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.machineFile org.eventb.core.comment="&#10;   Notes: Specify domain-specific problem with close-loop architecture and fixed sampling time " org.eventb.core.configuration="org.eventb.core.fwd" org.eventb.core.generated="false" org.eventb.texttools.text_lastmodified="1602756605432" org.eventb.texttools.text_representation="machine M3_close_loop&#10;/*&#10;   Notes: Specify domain-specific problem with close-loop architecture and fixed sampling time */&#10; refines M2_cycle  sees C3_close_loop&#10;&#10;variables P // continuous var temperature&#10;          V&#10;          now // continuous var time&#10;          s&#10;          fa // predicted safe time series by the controller&#10;          ta ga&#10;&#10;invariants&#10;  @type_P P∈Rpos→R&#10;  @type_V V∈Rpos→R&#10;  @type_now now∈Rpos&#10;  @type_s s∈sysSTATE&#10;  @type_fa fa ∈ Rpos → R&#10;  @type_ga ga ∈ Rpos → R&#10;  @safe_fa s = RUN ⇒ (∀t·t∈Rpos∧t∈openclosed(now, now plus ta)⇒leq(fa(t),S))&#10;  @safety_P ∀ t · t∈Rpos ∧ t∈closed(zero, now) ⇒ leq(P(t), S)&#10;&#10;events&#10;  event INITIALISATION extends INITIALISATION&#10;    then&#10;      @act4 s ≔ DECISION&#10;      @act5 fa :∈ Rpos → R&#10;      @act6 ga :∈ Rpos→R&#10;      @act7 ta :∈ Rpos&#10;  end&#10;&#10;  event Plant&#10;  /* Correspond to Plant in the close-loop archetecture.&#10;     After controller prediction, a safe trajectory is found, which is followed&#10;     by the heating system to establish step case of inductive safety property */&#10;  refines Prophecy&#10;    where&#10;      @grd1 s = RUN&#10;    with&#10;      @fx fx = fa&#10;      @gx gx = ga&#10;      @tx tx = ta&#10;    then&#10;      @act1 now ≔ now plus ta&#10;      @act2 P ≔ (P   (lopen(now)◁ fa))&#10;      @act4 V ≔  (V   (lopen(now)◁ ga))&#10;      @act3 s ≔ DECISION&#10;  end&#10;&#10;  event Ctrl&#10;  /* Correspond to Controller in the close-loop archetecture.&#10;     It ensures a safe trajectory over the next sampling is found to be appended to system trajectory */&#10;    any f g tx&#10;    where&#10;      @grd2 f ∈ Rpos → R&#10;      @grd5 g ∈ Rpos→R&#10;      @grd7 tx∈Rpos&#10;      @grd3 ∀t·t∈Rpos∧t∈openclosed(now, now plus tx)⇒leq(f(t),S)&#10;      @grd4 s = DECISION&#10;    then&#10;      @act1 s ≔ RUN&#10;      @act2 fa ≔ f&#10;      @act3 ga ≔ g&#10;      @act4 ta ≔ tx&#10;  end&#10;end&#10;" version="5">
+<org.eventb.core.refinesMachine name="_e4IhYOOrEeqGV8L4J4n50w" org.eventb.core.target="M2_cycle"/>
+<org.eventb.core.seesContext name="_e4IhYeOrEeqGV8L4J4n50w" org.eventb.core.target="C3_close_loop"/>
+<org.eventb.core.event name="'" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.generated="false" org.eventb.core.label="INITIALISATION">
+<org.eventb.core.action name="_e4JIcOOrEeqGV8L4J4n50w" org.eventb.core.assignment="s ≔ DECISION" org.eventb.core.generated="false" org.eventb.core.label="act4"/>
+<org.eventb.core.action name="_e4JIceOrEeqGV8L4J4n50w" org.eventb.core.assignment="fa :∈ Rpos → R" org.eventb.core.generated="false" org.eventb.core.label="act5"/>
+<org.eventb.core.action name="_mMtYMPESEeqLrv-2C1slmw" org.eventb.core.assignment="ga :∈ Rpos→R" org.eventb.core.generated="false" org.eventb.core.label="act6"/>
+<org.eventb.core.action name="_mMtYMfESEeqLrv-2C1slmw" org.eventb.core.assignment="ta :∈ Rpos" org.eventb.core.generated="false" org.eventb.core.label="act7"/>
+</org.eventb.core.event>
+<org.eventb.core.variable name="_rJdTAO3FEeqedoaCd3T8eA" org.eventb.core.comment="continuous var temperature" org.eventb.core.generated="false" org.eventb.core.identifier="P"/>
+<org.eventb.core.variable name="_jVYPcO6FEeqIGefUQ8Pb_g" org.eventb.core.generated="false" org.eventb.core.identifier="V"/>
+<org.eventb.core.variable name="_e4JIc-OrEeqGV8L4J4n50w" org.eventb.core.comment="continuous var time" org.eventb.core.generated="false" org.eventb.core.identifier="now"/>
+<org.eventb.core.variable name="_e4JvgOOrEeqGV8L4J4n50w" org.eventb.core.generated="false" org.eventb.core.identifier="s"/>
+<org.eventb.core.variable name="_e4JvgeOrEeqGV8L4J4n50w" org.eventb.core.comment="predicted safe time series by the controller" org.eventb.core.generated="false" org.eventb.core.identifier="fa"/>
+<org.eventb.core.invariant name="_xzPnMO6FEeqIGefUQ8Pb_g" org.eventb.core.generated="false" org.eventb.core.label="type_P" org.eventb.core.predicate="P∈Rpos→R"/>
+<org.eventb.core.invariant name="_xzPnMe6FEeqIGefUQ8Pb_g" org.eventb.core.generated="false" org.eventb.core.label="type_V" org.eventb.core.predicate="V∈Rpos→R"/>
+<org.eventb.core.invariant name="_e4Jvg-OrEeqGV8L4J4n50w" org.eventb.core.generated="false" org.eventb.core.label="type_now" org.eventb.core.predicate="now∈Rpos"/>
+<org.eventb.core.invariant name="_e4JvhOOrEeqGV8L4J4n50w" org.eventb.core.generated="false" org.eventb.core.label="type_s" org.eventb.core.predicate="s∈sysSTATE"/>
+<org.eventb.core.invariant name="_e4KWkOOrEeqGV8L4J4n50w" org.eventb.core.generated="false" org.eventb.core.label="type_fa" org.eventb.core.predicate="fa ∈ Rpos → R"/>
+<org.eventb.core.invariant name="_xzQOQO6FEeqIGefUQ8Pb_g" org.eventb.core.generated="false" org.eventb.core.label="type_ga" org.eventb.core.predicate="ga ∈ Rpos → R"/>
+<org.eventb.core.invariant name="_e4KWkeOrEeqGV8L4J4n50w" org.eventb.core.generated="false" org.eventb.core.label="safe_fa" org.eventb.core.predicate="s = RUN ⇒ (∀t·t∈Rpos∧t∈openclosed(now, now plus ta)⇒leq(fa(t),S))"/>
+<org.eventb.core.event name="_e4KWlOOrEeqGV8L4J4n50w" org.eventb.core.comment="Correspond to Plant in the close-loop archetecture.&#10;     After controller prediction, a safe trajectory is found, which is followed&#10;     by the heating system to establish step case of inductive safety property " org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.generated="false" org.eventb.core.label="Plant">
+<org.eventb.core.refinesEvent name="_e4KWleOrEeqGV8L4J4n50w" org.eventb.core.target="Prophecy"/>
+<org.eventb.core.guard name="_e4K9oOOrEeqGV8L4J4n50w" org.eventb.core.generated="false" org.eventb.core.label="grd1" org.eventb.core.predicate="s = RUN"/>
+<org.eventb.core.witness name="_e4K9oeOrEeqGV8L4J4n50w" org.eventb.core.generated="false" org.eventb.core.label="fx" org.eventb.core.predicate="fx = fa"/>
+<org.eventb.core.witness name="_KZ1TsO6MEeqIGefUQ8Pb_g" org.eventb.core.generated="false" org.eventb.core.label="gx" org.eventb.core.predicate="gx = ga"/>
+<org.eventb.core.witness name="_e4K9ouOrEeqGV8L4J4n50w" org.eventb.core.generated="false" org.eventb.core.label="tx" org.eventb.core.predicate="tx = ta"/>
+<org.eventb.core.action name="_e4K9o-OrEeqGV8L4J4n50w" org.eventb.core.assignment="now ≔ now plus ta" org.eventb.core.generated="false" org.eventb.core.label="act1"/>
+<org.eventb.core.action name="_e4K9pOOrEeqGV8L4J4n50w" org.eventb.core.assignment="P ≔ (P   (lopen(now)◁ fa))" org.eventb.core.generated="false" org.eventb.core.label="act2"/>
+<org.eventb.core.action name="_KZ1Tse6MEeqIGefUQ8Pb_g" org.eventb.core.assignment="V ≔  (V   (lopen(now)◁ ga))" org.eventb.core.generated="false" org.eventb.core.label="act4"/>
+<org.eventb.core.action name="_e4K9peOrEeqGV8L4J4n50w" org.eventb.core.assignment="s ≔ DECISION" org.eventb.core.generated="false" org.eventb.core.label="act3"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="_e4K9puOrEeqGV8L4J4n50w" org.eventb.core.comment="Correspond to Controller in the close-loop archetecture.&#10;     It ensures a safe trajectory over the next sampling is found to be appended to system trajectory " org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.generated="false" org.eventb.core.label="Ctrl">
+<org.eventb.core.parameter name="_e4LksOOrEeqGV8L4J4n50w" org.eventb.core.generated="false" org.eventb.core.identifier="f"/>
+<org.eventb.core.guard name="_e4LkseOrEeqGV8L4J4n50w" org.eventb.core.generated="false" org.eventb.core.label="grd2" org.eventb.core.predicate="f ∈ Rpos → R"/>
+<org.eventb.core.guard name="_KZ16wO6MEeqIGefUQ8Pb_g" org.eventb.core.generated="false" org.eventb.core.label="grd5" org.eventb.core.predicate="g ∈ Rpos→R"/>
+<org.eventb.core.guard name="_mMxCkPESEeqLrv-2C1slmw" org.eventb.core.generated="false" org.eventb.core.label="grd7" org.eventb.core.predicate="tx∈Rpos"/>
+<org.eventb.core.guard name="_e4LksuOrEeqGV8L4J4n50w" org.eventb.core.generated="false" org.eventb.core.label="grd3" org.eventb.core.predicate="∀t·t∈Rpos∧t∈openclosed(now, now plus tx)⇒leq(f(t),S)"/>
+<org.eventb.core.guard name="_e4Lks-OrEeqGV8L4J4n50w" org.eventb.core.generated="false" org.eventb.core.label="grd4" org.eventb.core.predicate="s = DECISION"/>
+<org.eventb.core.action name="_e4LktOOrEeqGV8L4J4n50w" org.eventb.core.assignment="s ≔ RUN" org.eventb.core.generated="false" org.eventb.core.label="act1"/>
+<org.eventb.core.action name="_KZ2h0O6MEeqIGefUQ8Pb_g" org.eventb.core.assignment="fa ≔ f" org.eventb.core.generated="false" org.eventb.core.label="act2"/>
+<org.eventb.core.action name="_e4LkteOrEeqGV8L4J4n50w" org.eventb.core.assignment="ga ≔ g" org.eventb.core.generated="false" org.eventb.core.label="act3"/>
+<org.eventb.core.parameter name="_KZ2h0e6MEeqIGefUQ8Pb_g" org.eventb.core.generated="false" org.eventb.core.identifier="g"/>
+<org.eventb.core.parameter name="_mMyQsPESEeqLrv-2C1slmw" org.eventb.core.generated="false" org.eventb.core.identifier="tx"/>
+<org.eventb.core.action name="_mMyQsfESEeqLrv-2C1slmw" org.eventb.core.assignment="ta ≔ tx" org.eventb.core.generated="false" org.eventb.core.label="act4"/>
+</org.eventb.core.event>
+<org.eventb.core.variable name="_mMyQsvESEeqLrv-2C1slmw" org.eventb.core.generated="false" org.eventb.core.identifier="ta"/>
+<org.eventb.core.variable name="_xzSDcO6FEeqIGefUQ8Pb_g" org.eventb.core.generated="false" org.eventb.core.identifier="ga"/>
+<org.eventb.core.invariant name="_KZ2h0-6MEeqIGefUQ8Pb_g" org.eventb.core.generated="false" org.eventb.core.label="safety_P" org.eventb.core.predicate="∀ t · t∈Rpos ∧ t∈closed(zero, now) ⇒ leq(P(t), S)"/>
+</org.eventb.core.machineFile>

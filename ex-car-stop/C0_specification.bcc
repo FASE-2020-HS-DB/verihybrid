@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.scContextFile org.eventb.core.accurate="true" org.eventb.core.configuration="org.eventb.core.fwd">
+<org.eventb.core.scAxiom name="'" org.eventb.core.label="type_P" org.eventb.core.predicate="Sa∈D → BOOL" org.eventb.core.source="/ex-car-stop/C0_specification.buc|org.eventb.core.contextFile#C0_specification|org.eventb.core.axiom#_rqsiE-L0EeqVTtyyfNXolQ" org.eventb.core.theorem="false"/>
+<org.eventb.core.scAxiom name="(" org.eventb.core.label="prop_d_prophecy" org.eventb.core.predicate="d_prophecy∈(Rpos ⦂ ℙ(R)) → D∧(∀t⦂R·t∈(Rpos ⦂ ℙ(R))⇒Sa(d_prophecy(t))=TRUE)" org.eventb.core.source="/ex-car-stop/C0_specification.buc|org.eventb.core.contextFile#C0_specification|org.eventb.core.axiom#_rqtJIOL0EeqVTtyyfNXolQ" org.eventb.core.theorem="false"/>
+<org.eventb.core.scCarrierSet name="D" org.eventb.core.source="/ex-car-stop/C0_specification.buc|org.eventb.core.contextFile#C0_specification|org.eventb.core.carrierSet#_rqsiEOL0EeqVTtyyfNXolQ" org.eventb.core.type="ℙ(D)"/>
+<org.eventb.core.scConstant name="Sa" org.eventb.core.source="/ex-car-stop/C0_specification.buc|org.eventb.core.contextFile#C0_specification|org.eventb.core.constant#_rqsiEeL0EeqVTtyyfNXolQ" org.eventb.core.type="ℙ(D×BOOL)"/>
+<org.eventb.core.scConstant name="d_prophecy" org.eventb.core.source="/ex-car-stop/C0_specification.buc|org.eventb.core.contextFile#C0_specification|org.eventb.core.constant#_rqsiEuL0EeqVTtyyfNXolQ" org.eventb.core.type="ℙ(R×D)"/>
+</org.eventb.core.scContextFile>

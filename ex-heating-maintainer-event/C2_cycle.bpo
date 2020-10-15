@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.poFile org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poIdentifier name="D" org.eventb.core.type="ℙ(D)"/>
+<org.eventb.core.poIdentifier name="Pa" org.eventb.core.type="ℙ(D×BOOL)"/>
+<org.eventb.core.poIdentifier name="d_prophecy" org.eventb.core.type="ℙ(R×D)"/>
+<org.eventb.core.poPredicate name="d_prophecz" org.eventb.core.predicate="Pa∈D → BOOL" org.eventb.core.source="/ex-heating-maintainer-event/C0_specification.buc|org.eventb.core.contextFile#C0_specification|org.eventb.core.axiom#_rqsiE-L0EeqVTtyyfNXolQ"/>
+<org.eventb.core.poPredicate name="d_prophec{" org.eventb.core.predicate="d_prophecy∈(Rpos ⦂ ℙ(R)) → D∧(∀t⦂R·t∈(Rpos ⦂ ℙ(R))⇒Pa(d_prophecy(t))=TRUE)" org.eventb.core.source="/ex-heating-maintainer-event/C0_specification.buc|org.eventb.core.contextFile#C0_specification|org.eventb.core.axiom#_rqtJIOL0EeqVTtyyfNXolQ"/>
+<org.eventb.core.poIdentifier name="Tmax" org.eventb.core.type="R"/>
+<org.eventb.core.poIdentifier name="Tmin" org.eventb.core.type="R"/>
+<org.eventb.core.poIdentifier name="f0" org.eventb.core.type="ℙ(R×R)"/>
+<org.eventb.core.poPredicate name="d_prophec|" org.eventb.core.predicate="Tmax∈(R ⦂ ℙ(R))" org.eventb.core.source="/ex-heating-maintainer-event/C1_safety.buc|org.eventb.core.contextFile#C1_safety|org.eventb.core.axiom#_yKqu0uL3EeqUwtjuxyhNVg"/>
+<org.eventb.core.poPredicate name="d_prophec}" org.eventb.core.predicate="Tmin∈(R ⦂ ℙ(R))" org.eventb.core.source="/ex-heating-maintainer-event/C1_safety.buc|org.eventb.core.contextFile#C1_safety|org.eventb.core.axiom#_yKrV4OL3EeqUwtjuxyhNVg"/>
+<org.eventb.core.poPredicate name="d_prophec~" org.eventb.core.predicate="lt(Tmin,Tmax)" org.eventb.core.source="/ex-heating-maintainer-event/C1_safety.buc|org.eventb.core.contextFile#C1_safety|org.eventb.core.axiom#_yKr88OL3EeqUwtjuxyhNVg"/>
+<org.eventb.core.poPredicate name="d_prophed'" org.eventb.core.predicate="f0=(λt⦂R·t∈(Rpos ⦂ ℙ(R)) ∣ Tmin)" org.eventb.core.source="/ex-heating-maintainer-event/C1_safety.buc|org.eventb.core.contextFile#C1_safety|org.eventb.core.axiom#_yKr88eL3EeqUwtjuxyhNVg"/>
+<org.eventb.core.poPredicate name="d_prophed(" org.eventb.core.predicate="leq(Tmin,Tmax)" org.eventb.core.source="/ex-heating-maintainer-event/C1_safety.buc|org.eventb.core.contextFile#C1_safety|org.eventb.core.axiom#_yKrV4OL3EeqUwtjuxyhNVi"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/ex-heating-maintainer-event/C2_cycle.bpo|org.eventb.core.poFile#C2_cycle|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="0"/>
+</org.eventb.core.poFile>

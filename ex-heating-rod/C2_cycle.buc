@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.contextFile org.eventb.core.configuration="org.eventb.core.fwd" org.eventb.core.generated="false" org.eventb.texttools.text_lastmodified="1598001818754" org.eventb.texttools.text_representation="context C_cycle&#10;extends C_safety&#10;end&#10;" version="3">
+<org.eventb.core.extendsContext name="__xQkQOOPEeqGV8L4J4n50w" org.eventb.core.target="C1_safety"/>
+</org.eventb.core.contextFile>

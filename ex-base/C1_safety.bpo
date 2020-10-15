@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.poFile org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poIdentifier name="D" org.eventb.core.type="ℙ(D)"/>
+<org.eventb.core.poIdentifier name="Pa" org.eventb.core.type="ℙ(D×BOOL)"/>
+<org.eventb.core.poIdentifier name="d_prophecy" org.eventb.core.type="ℙ(R×D)"/>
+<org.eventb.core.poPredicate name="d_prophecz" org.eventb.core.predicate="Pa∈D → BOOL" org.eventb.core.source="/ex-base/C0_specification.buc|org.eventb.core.contextFile#C0_specification|org.eventb.core.axiom#_rqsiE-L0EeqVTtyyfNXolQ"/>
+<org.eventb.core.poPredicate name="d_prophec{" org.eventb.core.predicate="d_prophecy∈(Rpos ⦂ ℙ(R)) → D∧(∀t⦂R·t∈(Rpos ⦂ ℙ(R))⇒Pa(d_prophecy(t))=TRUE)" org.eventb.core.source="/ex-base/C0_specification.buc|org.eventb.core.contextFile#C0_specification|org.eventb.core.axiom#_rqtJIOL0EeqVTtyyfNXolQ"/>
+<org.eventb.core.poIdentifier name="Tmax" org.eventb.core.type="R"/>
+<org.eventb.core.poIdentifier name="Tmin" org.eventb.core.type="R"/>
+<org.eventb.core.poIdentifier name="f0" org.eventb.core.type="ℙ(R×R)"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poSequent name="thm_Tmin/THM" org.eventb.core.accurate="true" org.eventb.core.poDesc="Theorem" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/ex-base/C1_safety.bpo|org.eventb.core.poFile#C1_safety|org.eventb.core.poPredicateSet#HYPC0_specificatior"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="leq(Tmin,Tmax)" org.eventb.core.source="/ex-base/C1_safety.buc|org.eventb.core.contextFile#C1_safety|org.eventb.core.axiom#_yKrV4OL3EeqUwtjuxyhNVi"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/ex-base/C1_safety.buc|org.eventb.core.contextFile#C1_safety|org.eventb.core.axiom#_yKrV4OL3EeqUwtjuxyhNVi"/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/ex-base/C1_safety.bpo|org.eventb.core.poFile#C1_safety|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poSelHintSnd="/ex-base/C1_safety.bpo|org.eventb.core.poFile#C1_safety|org.eventb.core.poPredicateSet#HYPC0_specificatior"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="HYPC0_specificatior" org.eventb.core.parentSet="/ex-base/C1_safety.bpo|org.eventb.core.poFile#C1_safety|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="Tmax∈(R ⦂ ℙ(R))" org.eventb.core.source="/ex-base/C1_safety.buc|org.eventb.core.contextFile#C1_safety|org.eventb.core.axiom#_yKqu0uL3EeqUwtjuxyhNVg"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="Tmin∈(R ⦂ ℙ(R))" org.eventb.core.source="/ex-base/C1_safety.buc|org.eventb.core.contextFile#C1_safety|org.eventb.core.axiom#_yKrV4OL3EeqUwtjuxyhNVg"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="lt(Tmin,Tmax)" org.eventb.core.source="/ex-base/C1_safety.buc|org.eventb.core.contextFile#C1_safety|org.eventb.core.axiom#_yKr88OL3EeqUwtjuxyhNVg"/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="f0=(λt⦂R·t∈(Rpos ⦂ ℙ(R)) ∣ Tmin)" org.eventb.core.source="/ex-base/C1_safety.buc|org.eventb.core.contextFile#C1_safety|org.eventb.core.axiom#_yKr88eL3EeqUwtjuxyhNVg"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/ex-base/C1_safety.bpo|org.eventb.core.poFile#C1_safety|org.eventb.core.poPredicateSet#HYPC0_specificatior" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="leq(Tmin,Tmax)" org.eventb.core.source="/ex-base/C1_safety.buc|org.eventb.core.contextFile#C1_safety|org.eventb.core.axiom#_yKrV4OL3EeqUwtjuxyhNVi"/>
+</org.eventb.core.poPredicateSet>
+</org.eventb.core.poFile>

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.theory.core.theoryRoot org.eventb.core.configuration="org.eventb.theory.core.thy">
+<org.eventb.theory.core.axiomaticDefinitionsBlock name="'" org.eventb.core.comment="postive real number" org.eventb.core.label="Rpos">
+<org.eventb.theory.core.axiomaticOperatorDefinition name="'" org.eventb.core.label="Rpos" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="ℙ(R)"/>
+<org.eventb.theory.core.axiomaticDefinitionAxiom name="(" org.eventb.core.label="Rpos_def" org.eventb.core.predicate="Rpos = { r ∣ r ∈ R ∧ leq(zero, r)}"/>
+</org.eventb.theory.core.axiomaticDefinitionsBlock>
+<org.eventb.theory.core.theorem name="(" org.eventb.core.label="Rpos_zero" org.eventb.core.predicate="zero ∈ Rpos"/>
+<org.eventb.theory.core.theorem name="element3" org.eventb.core.label="prop_domain_restric_agree" org.eventb.core.predicate="∀ f,s,v · f∈Rpos→R ∧ s⊆Rpos∧v∈s⇒ (s◁f)(v)=f(v)"/>
+<org.eventb.theory.core.theorem name="element4" org.eventb.core.label="prop_domain_restric_type" org.eventb.core.predicate="∀ s, f · f∈Rpos→R ∧ s⊆Rpos ⇒ s◁f ∈ Rpos⇸R"/>
+<org.eventb.theory.core.theorem name="element5" org.eventb.core.label="prop_domain_restric_dom" org.eventb.core.predicate="∀ s, f · f∈Rpos→R ∧ s⊆Rpos ⇒ dom(s◁f) = s"/>
+<org.eventb.theory.core.theorem name="element6" org.eventb.core.label="prop_fun_override_dom" org.eventb.core.predicate="∀ g, f · f∈Rpos→R ∧  g∈Rpos⇸R ⇒ dom(fg) = dom(f)"/>
+<org.eventb.theory.core.theorem name="element7" org.eventb.core.label="prop_fun_override_type" org.eventb.core.predicate="∀ g, f · f∈Rpos→R ∧ g∈Rpos⇸R ⇒ f  g ∈ Rpos→R"/>
+<org.eventb.theory.core.theorem name="element8" org.eventb.core.label="prop_fun_override_type2" org.eventb.core.predicate="∀ g, f · f∈Rpos→R ∧ g∈Rpos⇸R ⇒ g  f ∈ Rpos→R"/>
+<org.eventb.theory.core.theorem name="element9" org.eventb.core.label="prop_fun_override_type3" org.eventb.core.predicate="∀ g, f · f∈Rpos→R ∧ g∈Rpos⇸R ⇒ f  g ∈ R⇸R"/>
+<org.eventb.theory.core.theorem name="element10" org.eventb.core.label="prop_fun_override_agree_right" org.eventb.core.predicate="∀ f,g,v · f∈Rpos→R ∧ g∈Rpos⇸R∧v∈dom(g)⇒ (fg)(v)=g(v)"/>
+<org.eventb.theory.core.theorem name="element11" org.eventb.core.label="prop_fun_override_agree_left" org.eventb.core.predicate="∀ f,g,v · f∈Rpos→R ∧ g∈Rpos⇸R∧v∉dom(g)∧v∈dom(f)⇒ (fg)(v)=f(v)"/>
+<org.eventb.theory.core.importTheoryProject name=")" org.eventb.theory.core.importTheoryProject="/theory-axiom-real">
+<org.eventb.theory.core.importTheory name="'" org.eventb.theory.core.importTheory="/theory-axiom-real/Real.dtf|org.eventb.theory.core.deployedTheoryRoot#Real"/>
+</org.eventb.theory.core.importTheoryProject>
+<org.eventb.theory.core.proofRulesBlock name="element1" org.eventb.core.label="real">
+<org.eventb.theory.core.metaVariable name="'" org.eventb.core.identifier="a" org.eventb.theory.core.type="R"/>
+<org.eventb.theory.core.rewriteRule name="(" org.eventb.core.label="leq_refl" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="" org.eventb.theory.core.formula="leq(a,a)">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="⊤"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.metaVariable name=")" org.eventb.core.identifier="b" org.eventb.theory.core.type="R"/>
+<org.eventb.theory.core.rewriteRule name="*" org.eventb.core.label="lt_def_left" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="" org.eventb.theory.core.formula="lt(a, b)">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="leq(a, b) ∧ a≠b"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="," org.eventb.core.label="Ropp_0" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="" org.eventb.theory.core.formula="neg(zero)">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="zero"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="-" org.eventb.core.label="Rplus_le_compat_r" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="" org.eventb.theory.core.formula="leq(a plus c, b plus c)">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="leq(a,b)"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.metaVariable name="." org.eventb.core.identifier="c" org.eventb.theory.core.type="R"/>
+<org.eventb.theory.core.rewriteRule name="/" org.eventb.core.label="Rzero_mem" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="" org.eventb.theory.core.formula="zero∈Rpos">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="⊤"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="0" org.eventb.core.label="Rplus_pos_mem" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="Rplus_pos_mem" org.eventb.theory.core.formula="a plus b∈Rpos">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="a∈Rpos∧b∈Rpos"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="1" org.eventb.core.label="Rsqr" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="Rsqr" org.eventb.theory.core.formula="sqr(a)">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="a mult a"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="2" org.eventb.core.label="Ropp_involutive" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="Ropp_involutive" org.eventb.theory.core.formula="neg(neg(a))">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="a"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="3" org.eventb.core.label="Ropp_plus_distr" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="Ropp_plus_distr" org.eventb.theory.core.formula="neg(a plus b)">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="neg(a) plus neg(b)"/>
+</org.eventb.theory.core.rewriteRule>
+</org.eventb.theory.core.proofRulesBlock>
+<org.eventb.theory.core.axiomaticDefinitionsBlock name="element2" org.eventb.core.comment="(Classical) decidability" org.eventb.core.label="decidability">
+<org.eventb.theory.core.axiomaticDefinitionAxiom name="'" org.eventb.core.label="inser_trans_R" org.eventb.core.predicate="∀ r1,r2,r3,r4 · r1∈R ∧ r2∈R ∧ r3∈R ∧ r4∈R ⇒  &#13;&#10;(leq(r1,r2) ∧ lt(r2,r3) ⇒ &#13;&#10;(leq(r1,r2) ∧ lt(r2,r4)) ∨ &#13;&#10;(leq(r4, r2) ∧ lt(r2,r3))) "/>
+<org.eventb.theory.core.axiomaticDefinitionAxiom name="(" org.eventb.core.comment="derive from inser_trans_R" org.eventb.core.label="inser_trans_R_d1" org.eventb.core.predicate=" ∀ r1,r2,r3,r4 · r1∈R ∧ r2∈R ∧ r3∈R ∧ r4∈R ⇒  &#13;&#10;(leq(r1,r2) ∧ lt(r2,r3) ⇒ &#13;&#10;(leq(r1,r2) ∧ leq(r2,r4)) ∨ &#13;&#10;(lt(r4, r2) ∧ lt(r2,r3))) "/>
+<org.eventb.theory.core.axiomaticDefinitionAxiom name=")" org.eventb.core.comment="derive from inser_trans_R" org.eventb.core.label="inser_trans_R_d2" org.eventb.core.predicate="∀ r1,r2,r3,r4 · r1∈R ∧ r2∈R ∧ r3∈R ∧ r4∈R ⇒  &#13;&#10;(leq(r1,r2) ∧ leq(r2,r3) ⇒ &#13;&#10;(leq(r1,r2) ∧ leq(r2,r4)) ∨ &#13;&#10;(lt(r4, r2) ∧ leq(r2,r3))) "/>
+<org.eventb.theory.core.axiomaticDefinitionAxiom name="*" org.eventb.core.comment="derive from inser_trans_R" org.eventb.core.label="inser_trans_R_d3" org.eventb.core.predicate="∀ r1,r2,r3,r4 · r1∈R ∧ r2∈R ∧ r3∈R ∧ r4∈R ⇒  &#13;&#10;(leq(r1,r2) ∧ leq(r2,r3) ⇒  &#13;&#10;(leq(r1,r2) ∧ lt(r2,r4)) ∨  &#13;&#10;(leq(r4, r2) ∧ leq(r2,r3))) "/>
+<org.eventb.theory.core.axiomaticDefinitionAxiom name="+" org.eventb.core.comment="derive from inser_trans_R" org.eventb.core.label="inser_trans_R_d4" org.eventb.core.predicate="∀ r1,r2,r3,r4 · r1∈R ∧ r2∈R ∧ r3∈R ∧ r4∈R ⇒  &#13;&#10;(lt(r1,r2) ∧ leq(r2,r3) ⇒ &#13;&#10;(lt(r1,r2) ∧ leq(r2,r4)) ∨ &#13;&#10;(lt(r4, r2) ∧ leq(r2,r3))) "/>
+</org.eventb.theory.core.axiomaticDefinitionsBlock>
+<org.eventb.theory.core.axiomaticDefinitionsBlock name="element12" org.eventb.core.label="covariant_compatibility">
+<org.eventb.theory.core.axiomaticDefinitionAxiom name="'" org.eventb.core.label="Rmult_lt_0_compat" org.eventb.core.predicate="∀ r1,r2 · r1∈R ∧ r2∈R ⇒  &#13;&#10;  (lt(zero,r1) ∧ lt(zero,r2) ⇒ &#13;&#10;    lt(zero, r1 mult r2))"/>
+<org.eventb.theory.core.axiomaticDefinitionAxiom name="(" org.eventb.core.label="Rmult_gt_0_compat" org.eventb.core.predicate="∀ r1,r2 · r1∈R ∧ r2∈R ⇒  &#13;&#10;  (gt(r1,zero) ∧ gt(r2, zero) ⇒ &#13;&#10;    gt(r1 mult r2, zero))"/>
+</org.eventb.theory.core.axiomaticDefinitionsBlock>
+<org.eventb.theory.core.axiomaticDefinitionsBlock name="element13" org.eventb.core.comment="injection from Z to R" org.eventb.core.label="injection">
+<org.eventb.theory.core.axiomaticDefinitionAxiom name="'" org.eventb.core.label="Rmult_le_pos" org.eventb.core.predicate="∀ r1,r2 · r1∈R ∧ r2∈R ⇒  &#13;&#10;  (leq(zero,r1) ∧ leq(zero,r2) ⇒ &#13;&#10;    leq(zero, r1 mult r2))"/>
+</org.eventb.theory.core.axiomaticDefinitionsBlock>
+<org.eventb.theory.core.axiomaticDefinitionsBlock name="element14" org.eventb.core.label="order_and_inverse">
+<org.eventb.theory.core.axiomaticDefinitionAxiom name="'" org.eventb.core.label="Rinv_0_lt_compat" org.eventb.core.predicate="∀ r · r∈R ⇒  &#13;&#10;  (lt(zero, r) ⇒ &#13;&#10;    lt(zero, inv(r)))"/>
+</org.eventb.theory.core.axiomaticDefinitionsBlock>
+<org.eventb.theory.core.axiomaticDefinitionsBlock name="element1:" org.eventb.core.comment="relating_strict_and_large_orders" org.eventb.core.label="order">
+<org.eventb.theory.core.axiomaticDefinitionAxiom name="'" org.eventb.core.label="Rnot_le_lt " org.eventb.core.predicate="∀ r1, r2 · r1∈R ∧ r2∈R ⇒ (¬leq(r1,r2) ⇒ lt(r2,r1))"/>
+<org.eventb.theory.core.axiomaticDefinitionAxiom name="(" org.eventb.core.label="Rlt_not_le" org.eventb.core.predicate="∀ r1, r2 · r1∈R ∧ r2∈R ⇒ (lt(r2,r1) ⇒ ¬ (leq(r1, r2)))"/>
+<org.eventb.theory.core.axiomaticDefinitionAxiom name=")" org.eventb.core.label="Rle_not_lt" org.eventb.core.predicate="∀ r1, r2 · r1∈R ∧ r2∈R ⇒ (leq(r2,r1) ⇒ ¬ (lt(r1, r2)))"/>
+<org.eventb.theory.core.axiomaticDefinitionAxiom name="*" org.eventb.core.label="Rlt_trans" org.eventb.core.predicate="∀r1,r2,r3· lt(r1,r2) ∧ lt(r2,r3) ⇒ lt(r1,r3)"/>
+</org.eventb.theory.core.axiomaticDefinitionsBlock>
+<org.eventb.theory.core.axiomaticDefinitionsBlock name="element15" org.eventb.core.label="order_addition_compatibility">
+<org.eventb.theory.core.axiomaticDefinitionAxiom name="'" org.eventb.core.label="Rplus_lt_0_compat" org.eventb.core.predicate="∀ r1,r2 · r1∈R ∧ r2∈R ⇒  &#13;&#10;  (lt(zero,r1) ∧ lt(zero,r2) ⇒ &#13;&#10;    lt(zero, r1 plus r2))"/>
+<org.eventb.theory.core.axiomaticDefinitionAxiom name="(" org.eventb.core.label="Rplus_lt_compat_r" org.eventb.core.predicate="∀ r1, r2, r · r∈R ∧ r1∈R ∧ r2∈R ⇒ (lt(r1, r2) ⇒  &#13;&#10;lt(r1 plus r, r2 plus r)) "/>
+<org.eventb.theory.core.axiomaticDefinitionAxiom name=")" org.eventb.core.label="Rplus_le_compat_r" org.eventb.core.predicate="∀ r1, r2, r · r∈R ∧ r1∈R ∧ r2∈R ⇒ (leq(r1, r2) ⇒  &#13;&#10;leq(r1 plus r, r2 plus r)) "/>
+</org.eventb.theory.core.axiomaticDefinitionsBlock>
+<org.eventb.theory.core.axiomaticDefinitionsBlock name="element1;" org.eventb.core.label="order_transitivity">
+<org.eventb.theory.core.axiomaticDefinitionAxiom name="'" org.eventb.core.label="Rlt_le_trans" org.eventb.core.predicate="∀ r1,r2,r3 · lt(r1,r2) ⇒ (leq(r2,r3) ⇒ lt(r1,r3))"/>
+</org.eventb.theory.core.axiomaticDefinitionsBlock>
+<org.eventb.theory.core.axiomaticDefinitionsBlock name="element1&gt;" org.eventb.core.label="order_opposite">
+<org.eventb.theory.core.axiomaticDefinitionAxiom name="'" org.eventb.core.label="Ropp_le_ge_contravar" org.eventb.core.predicate="∀ r1,r2 · leq(r1,r2) ⇒ leq(neg(r2),neg(r1))"/>
+</org.eventb.theory.core.axiomaticDefinitionsBlock>
+<org.eventb.theory.core.axiomaticDefinitionsBlock name="element16" org.eventb.core.label="zero_is_less_than_one">
+<org.eventb.theory.core.axiomaticDefinitionAxiom name="'" org.eventb.core.label="Rlt_0_1" org.eventb.core.predicate="lt(zero,one)"/>
+<org.eventb.theory.core.axiomaticDefinitionAxiom name="(" org.eventb.core.label="Rle_0_1" org.eventb.core.predicate="leq(zero,one)"/>
+</org.eventb.theory.core.axiomaticDefinitionsBlock>
+<org.eventb.theory.core.axiomaticDefinitionsBlock name="element17" org.eventb.core.label="square_function">
+<org.eventb.theory.core.axiomaticOperatorDefinition name="'" org.eventb.core.label="sqr" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="R">
+<org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="R" org.eventb.core.identifier="r"/>
+</org.eventb.theory.core.axiomaticOperatorDefinition>
+<org.eventb.theory.core.axiomaticDefinitionAxiom name="(" org.eventb.core.label="Rsqr_0" org.eventb.core.predicate="sqr(zero)=zero"/>
+<org.eventb.theory.core.axiomaticDefinitionAxiom name=")" org.eventb.core.label="Rsqr_0_uniq" org.eventb.core.predicate="∀r·sqr(r)=zero⇒r=zero"/>
+</org.eventb.theory.core.axiomaticDefinitionsBlock>
+<org.eventb.theory.core.axiomaticDefinitionsBlock name="element18" org.eventb.core.label="order_and_sqaure_function">
+<org.eventb.theory.core.axiomaticDefinitionAxiom name="'" org.eventb.core.label="Rle_0_sqr" org.eventb.core.predicate="∀r·leq(zero,sqr(r))"/>
+<org.eventb.theory.core.axiomaticDefinitionAxiom name="(" org.eventb.core.label="Rlt_0_sqr" org.eventb.core.predicate="∀r·r≠zero⇒lt(zero,sqr(r))"/>
+</org.eventb.theory.core.axiomaticDefinitionsBlock>
+<org.eventb.theory.core.axiomaticDefinitionsBlock name="element1=" org.eventb.core.label="opposite">
+<org.eventb.theory.core.axiomaticDefinitionAxiom name="'" org.eventb.core.label="Ropp_involutive" org.eventb.core.predicate="∀r·neg(neg(r)) = r"/>
+</org.eventb.theory.core.axiomaticDefinitionsBlock>
+<org.eventb.theory.core.axiomaticDefinitionsBlock name="element19" org.eventb.core.label="cancelltation">
+<org.eventb.theory.core.axiomaticDefinitionAxiom name="'" org.eventb.core.label="Rplus_lt_reg_pos_r" org.eventb.core.predicate="∀ r1,r2,r3 · &#13;&#10;  (leq(zero,r2) ∧ lt(r1 plus r2, r3) ⇒ &#13;&#10;    lt(r1, r3))"/>
+<org.eventb.theory.core.axiomaticDefinitionAxiom name="(" org.eventb.core.label="Rplus_le_reg_pos_r" org.eventb.core.predicate="∀ r1,r2,r3 · &#13;&#10;  (leq(zero,r2) ∧ leq(r1 plus r2, r3) ⇒ &#13;&#10;    leq(r1, r3))"/>
+</org.eventb.theory.core.axiomaticDefinitionsBlock>
+</org.eventb.theory.core.theoryRoot>
